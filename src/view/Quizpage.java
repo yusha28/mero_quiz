@@ -4,15 +4,21 @@
  */
 package view;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+import javax.swing.Timer;
+
 /**
  *
  * @author Acer
  */
 public class Quizpage extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Quizpage
-     */
+        
+    public static int questions = 0;
+    public static int options = 0;
+    public static int sec = 20;
+    
     public Quizpage() {
         initComponents();
     }
@@ -27,20 +33,18 @@ public class Quizpage extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        Questions = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        option1 = new javax.swing.JCheckBox();
+        option2 = new javax.swing.JCheckBox();
+        option3 = new javax.swing.JCheckBox();
+        option4 = new javax.swing.JCheckBox();
+        skip = new javax.swing.JButton();
+        next = new javax.swing.JButton();
+        timer1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jTextField1.setText("00");
 
         jTextField2.setText("Question No. 1 of 10");
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
@@ -49,27 +53,39 @@ public class Quizpage extends javax.swing.JFrame {
             }
         });
 
-        jTextField3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jTextField3.setText("Q.1. No Of Primitive Data Type In Java?");
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        Questions.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Questions.setText("Q.1. No Of Primitive Data Type In Java?");
+        Questions.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                QuestionsActionPerformed(evt);
             }
         });
 
         jTextField4.setText("Please choose one of the following answer.");
 
-        jCheckBox1.setText("6");
+        option1.setText("6");
 
-        jCheckBox2.setText("7");
+        option2.setText("7");
 
-        jCheckBox3.setText("8");
+        option3.setText("8");
 
-        jCheckBox4.setText("9");
+        option4.setText("9");
 
-        jButton1.setText("Skip");
+        skip.setText("Skip");
+        skip.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                skipActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Next");
+        next.setText("Next");
+        next.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nextActionPerformed(evt);
+            }
+        });
+
+        timer1.setText("00");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -81,51 +97,51 @@ public class Quizpage extends javax.swing.JFrame {
                         .addGap(49, 49, 49)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(Questions, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(70, 70, 70)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(option1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(option2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(option3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(option4, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(160, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(58, 58, 58))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(skip)
                         .addGap(39, 39, 39)
-                        .addComponent(jButton2)
-                        .addGap(145, 145, 145))))
+                        .addComponent(next)
+                        .addGap(145, 145, 145))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(timer1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(timer1)
                 .addGap(50, 50, 50)
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Questions, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox1)
+                .addComponent(option1)
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox2)
+                .addComponent(option2)
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox3)
+                .addComponent(option3)
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox4)
+                .addComponent(option4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(skip)
+                    .addComponent(next))
                 .addGap(35, 35, 35))
         );
 
@@ -147,13 +163,64 @@ public class Quizpage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void QuestionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuestionsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_QuestionsActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
+        if(questions == 4 && options ==4){
+            questions = 0;
+            options = 0;
+            timer1.setVisible(false);
+            JOptionPane.showMessageDialog(this,"Opening new page","Congrats",JOptionPane.INFORMATION_MESSAGE);
+            
+        }
+        if(questions == 3 && options == 3){
+            next.setText("Submit");
+        }
+        else{
+            next.setText("Next");
+        }
+        timer1.setVisible(true);
+   
+        Questions.setText(question1(questions));
+        option1.setText(optionss1(options));
+        option2.setText(optionss2(options));
+        option3.setText(optionss3(options));
+        option4.setText(optionss4(options));
+        questions++;
+        options++;
+        sec = 20;
+        
+    }//GEN-LAST:event_nextActionPerformed
+
+    private void skipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skipActionPerformed
+        // TODO add your handling code here:
+        performNext();
+    }//GEN-LAST:event_skipActionPerformed
+
+    // temporary questions
+    public static String question1(int id){
+        String [] que = {"First", "Second", "Third","Fourth"};
+        return que[id];
+    }
+    public static String optionss1(int id){
+        String[] option1 = {"Option 1{First}","Option1{Second}","Option1{Third}","Option1{Fourth}"};
+        return option1[id];
+    }
+    public static String optionss2(int id){
+        String[] option2 = {"Option 2{First}","Option2{Second}","Option2{Third}","Option2{Fourth}"};
+        return option2[id];
+    }
+    public static String optionss3(int id){
+        String[] option3 = {"Option 3{First}","Option3{Second}","Option3{Third}","Option3{Fourth}"};
+        return option3[id];
+    }
+    public static String optionss4(int id){
+        String[] option4 = {"Option 4{First}","Option4{Second}","Option4{Third}","Option4{Fourth}"};
+        return option4[id];
+    }
+    //ends here 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -182,21 +249,69 @@ public class Quizpage extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Quizpage().setVisible(true);
+                Timer timer = new Timer(1000, new ActionListener(){
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(sec >=0){  
+                        timer1.setText(String.valueOf(sec));
+                        sec--;
+                        }
+                        else{
+                            sec = 21;
+                            performNext();
+                            
+                        }
+                    }
+                    
+                });
+                
+                if(sec >= 0){
+                     performNext();
+                     timer.stop();
+                     sec = 21;
+                }
+                
+                timer.start();
             }
         });
     }
+    
+    public static void performNext(){
+        if(questions == 4 && options ==4){
+            questions = 0;
+            options = 0;
+            timer1.setVisible(false);
+            
+        }
+        if(questions == 3 && options == 3){
+            next.setText("Submit");
+        }
+        else{
+            next.setText("Next");
+        }
+        sec = 20;
+        timer1.setVisible(true);
+        Questions.setText(question1(questions));
+        option1.setText(optionss1(options));
+        option2.setText(optionss2(options));
+        option3.setText(optionss3(options));
+        option4.setText(optionss4(options));
+        questions++;
+        options++;
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
+    public static javax.swing.JTextField Questions;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    public static javax.swing.JButton next;
+    public static javax.swing.JCheckBox option1;
+    public static javax.swing.JCheckBox option2;
+    public static javax.swing.JCheckBox option3;
+    public static javax.swing.JCheckBox option4;
+    private javax.swing.JButton skip;
+    public static javax.swing.JLabel timer1;
     // End of variables declaration//GEN-END:variables
 }
