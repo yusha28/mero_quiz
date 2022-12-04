@@ -172,6 +172,7 @@ public class Quizpage extends javax.swing.JFrame {
             questions = 0;
             options = 0;
             timer1.setVisible(false);
+            // start from here
             JOptionPane.showMessageDialog(this,"Opening new page","Congrats",JOptionPane.INFORMATION_MESSAGE);
             
         }
