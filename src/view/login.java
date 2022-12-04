@@ -68,6 +68,11 @@ public class login extends javax.swing.JFrame {
         });
 
         jButton2.setText("Login");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Forget password");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -162,6 +167,11 @@ Jf1.setVisible(true);// TODO add your handling code here:
 Forget Jf2 = new Forget();
 Jf2.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+HomePage jF3 = new HomePage();
+jF3.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
