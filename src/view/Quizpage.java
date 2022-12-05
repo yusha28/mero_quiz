@@ -168,7 +168,7 @@ public class Quizpage extends javax.swing.JFrame {
     }//GEN-LAST:event_QuestionsActionPerformed
 
     private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
-        if(questions == 4 && options ==4){
+        if(questions == 10 && options ==10){
             questions = 0;
             options = 0;
             timer1.setVisible(false);
@@ -176,7 +176,7 @@ public class Quizpage extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Opening new page","Congrats",JOptionPane.INFORMATION_MESSAGE);
             
         }
-        if(questions == 3 && options == 3){
+        if(questions == 9 && options == 9){
             next.setText("Submit");
         }
         else{
@@ -202,23 +202,23 @@ public class Quizpage extends javax.swing.JFrame {
 
     // temporary questions
     public static String question1(int id){
-        String [] que = {"First", "Second", "Third","Fourth"};
+        String [] que = {"First", "Second", "Third","Fourth","fifth","sixth","seventh","eight","nine", "ten"};
         return que[id];
     }
     public static String optionss1(int id){
-        String[] option1 = {"Option 1{First}","Option1{Second}","Option1{Third}","Option1{Fourth}"};
+        String[] option1 = {"Option 1{First}","Option1{Second}","Option1{Third}","Option1{Fourth}","Option 1{First}","Option1{Second}","Option1{Third}","Option1{Fourth}","Option1{Third}","Option1{Fourth}"};
         return option1[id];
     }
     public static String optionss2(int id){
-        String[] option2 = {"Option 2{First}","Option2{Second}","Option2{Third}","Option2{Fourth}"};
+        String[] option2 = {"Option 2{First}","Option2{Second}","Option2{Third}","Option2{Fourth}","Option 2{First}","Option2{Second}","Option2{Third}","Option2{Fourth}","Option 2{First}","Option2{Second}"};
         return option2[id];
     }
     public static String optionss3(int id){
-        String[] option3 = {"Option 3{First}","Option3{Second}","Option3{Third}","Option3{Fourth}"};
+        String[] option3 = {"Option 3{First}","Option3{Second}","Option3{Third}","Option3{Fourth}","Option 3{First}","Option3{Second}","Option3{Third}","Option3{Fourth}","Option 3{First}","Option3{Second}"};
         return option3[id];
     }
     public static String optionss4(int id){
-        String[] option4 = {"Option 4{First}","Option4{Second}","Option4{Third}","Option4{Fourth}"};
+        String[] option4 = {"Option 4{First}","Option4{Second}","Option4{Third}","Option4{Fourth}","Option 4{First}","Option4{Second}","Option4{Third}","Option4{Fourth}","Option 4{First}","Option4{Second}"};
         return option4[id];
     }
     //ends here 
@@ -278,13 +278,13 @@ public class Quizpage extends javax.swing.JFrame {
     }
     
     public static void performNext(){
-        if(questions == 4 && options ==4){
+        if(questions == 10 && options ==10){
             questions = 0;
             options = 0;
             timer1.setVisible(false);
             
         }
-        if(questions == 3 && options == 3){
+        if(questions == 9 && options == 9){
             next.setText("Submit");
         }
         else{
