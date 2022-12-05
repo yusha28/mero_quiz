@@ -18,6 +18,8 @@ public class Quizpage extends javax.swing.JFrame {
     public static int questions = 0;
     public static int options = 0;
     public static int sec = 20;
+    public static int questionCount = 0;
+    public static Timer timer;
     
     public Quizpage() {
         initComponents();
@@ -33,7 +35,7 @@ public class Quizpage extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextField2 = new javax.swing.JTextField();
+        remaining = new javax.swing.JTextField();
         Questions = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         option1 = new javax.swing.JCheckBox();
@@ -46,10 +48,10 @@ public class Quizpage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextField2.setText("Question No. 1 of 10");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        remaining.setText("Question No. 1 of 10");
+        remaining.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                remainingActionPerformed(evt);
             }
         });
 
@@ -96,7 +98,7 @@ public class Quizpage extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(49, 49, 49)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(remaining, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Questions, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(70, 70, 70)
@@ -125,7 +127,7 @@ public class Quizpage extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(timer1)
                 .addGap(50, 50, 50)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(remaining, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(Questions, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -159,9 +161,9 @@ public class Quizpage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void remainingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remainingActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_remainingActionPerformed
 
     private void QuestionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuestionsActionPerformed
         // TODO add your handling code here:
@@ -250,42 +252,57 @@ public class Quizpage extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Quizpage().setVisible(true);
-                Timer timer = new Timer(1000, new ActionListener(){
+                
+                if(questionCount == 10){
+                    
+                }
+                timer = new Timer(1000, new ActionListener(){
                     @Override
                     public void actionPerformed(ActionEvent e) {
+                        
                         if(sec >=0){  
                         timer1.setText(String.valueOf(sec));
                         sec--;
                         }
                         else{
-                            sec = 21;
+                            questionCount++;
+                            sec = 20;
                             performNext();
                             
                         }
+                        
                     }
                     
                 });
                 
+                
                 if(sec >= 0){
                      performNext();
                      timer.stop();
-                     sec = 21;
+                     sec = 20;
                 }
                 
+                
                 timer.start();
-            }
+               
+                    
+           }
         });
     }
     
     public static void performNext(){
         if(questions == 10 && options ==10){
-            questions = 0;
-            options = 0;
+            timer.stop();
+            questions = 9;
+            options = 9;
+           
             timer1.setVisible(false);
             
         }
         if(questions == 9 && options == 9){
             next.setText("Submit");
+        
+
         }
         else{
             next.setText("Next");
@@ -305,13 +322,13 @@ public class Quizpage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JTextField Questions;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField4;
     public static javax.swing.JButton next;
     public static javax.swing.JCheckBox option1;
     public static javax.swing.JCheckBox option2;
     public static javax.swing.JCheckBox option3;
     public static javax.swing.JCheckBox option4;
+    private javax.swing.JTextField remaining;
     private javax.swing.JButton skip;
     public static javax.swing.JLabel timer1;
     // End of variables declaration//GEN-END:variables
