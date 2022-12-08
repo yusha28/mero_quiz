@@ -21,7 +21,7 @@ public class Quizpage extends javax.swing.JFrame {
     public static int questionCount = 1;
     public static Timer timer;
     public static String answer;
-    public static String correctAnswer;
+    public static int correctAnswer = 0;
     
     public Quizpage() {
         initComponents();
@@ -289,9 +289,11 @@ public class Quizpage extends javax.swing.JFrame {
         });
     }
     public static void isCorrectAnswer(){
-        if(answer.equals(correctAnswer)){
-            
-        }
+        Quiz quiz = new Quiz();
+        if(answer.equals(quiz.getRightAnswer())) {
+            correctAnswer++;
+        } 
+        
     }
     
     public static void performNext(){

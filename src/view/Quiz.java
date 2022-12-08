@@ -9,6 +9,7 @@ package view;
  * @author Acer
  */
 public class Quiz {
+    private String category;
     private String rightAnswer;// get right answer from database
     private String question;
     private String option1;
@@ -16,10 +17,46 @@ public class Quiz {
     private String option3;
     private String option4;
     private int score;
-    private int 
+    private int numberOfCorrectAnswer;// eg. correct answer is 2/10
+
+    public Quiz(String category, String rightAnswer, String question, String option1, String option2, String option3, String option4) {
+        this.category = category;
+        this.rightAnswer = rightAnswer;
+        this.question = question;
+        this.option1 = option1;
+        this.option2 = option2;
+        this.option3 = option3;
+        this.option4 = option4;
+    }
+    
     Quiz(){
     
     }
+    
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public int getNumberOfCorrectAnswer() {
+        return numberOfCorrectAnswer;
+    }
+
+    public void setNumberOfCorrectAnswer(int numberOfCorrectAnswer) {
+        this.numberOfCorrectAnswer = numberOfCorrectAnswer;
+    }
+    
     
     public String getRightAnswer() {
         return rightAnswer;
