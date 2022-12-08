@@ -6,6 +6,8 @@ package view;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
@@ -283,10 +285,61 @@ public class Quizpage extends javax.swing.JFrame {
                 
                 
                 timer.start();
-               
-                    
+                // calling the methods
+                onAnswerSelected();
+                isCorrectAnswer();
+                
+//                option1.addItemListener(new ItemListener(){
+//                    @Override
+//                    public void itemStateChanged(ItemEvent e) {
+//                        if(e.getStateChange()==1){
+//                            answer = option1.getText();
+//                        }
+//                    }
+//                
+//                });
+                                
            }
         });
+        
+    }
+    public static void onAnswerSelected(){
+        option1.addItemListener(new ItemListener(){
+                    @Override
+                    public void itemStateChanged(ItemEvent e) {
+                        if(e.getStateChange()==1){
+                            answer = option1.getText();
+                        }
+                    }
+                
+                });
+        option2.addItemListener(new ItemListener(){
+                    @Override
+                    public void itemStateChanged(ItemEvent e) {
+                        if(e.getStateChange()==1){
+                            answer = option1.getText();
+                        }
+                    }
+                
+                });
+        option3.addItemListener(new ItemListener(){
+                    @Override
+                    public void itemStateChanged(ItemEvent e) {
+                        if(e.getStateChange()==1){
+                            answer = option1.getText();
+                        }
+                    }
+                
+                });
+        option4.addItemListener(new ItemListener(){
+                    @Override
+                    public void itemStateChanged(ItemEvent e) {
+                        if(e.getStateChange()==1){
+                            answer = option1.getText();
+                        }
+                    }
+                
+                });
     }
     public static void isCorrectAnswer(){
         Quiz quiz = new Quiz();
