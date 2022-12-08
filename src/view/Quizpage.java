@@ -302,11 +302,12 @@ public class Quizpage extends javax.swing.JFrame {
                         if(e.getStateChange()==1){
                             answer = option1.getText();
                             if(isCorrectAnswer()){
-                                option1.setBackground(Color.green);
+                                option1.setBackground(Color.green);//This code can be removed because correctAnswer is better.
                             }
                             else{
                                 option1.setBackground(Color.red);
                             }
+                             correctAnswer();
                         }
                     }
                 
@@ -318,11 +319,12 @@ public class Quizpage extends javax.swing.JFrame {
                             answer = option2.getText();
                         }
                         if(isCorrectAnswer()){
-                                option2.setBackground(Color.green);
+                                option2.setBackground(Color.green);//This code can be removed because correctAnswer is better.
                             }
                             else{
                                 option2.setBackground(Color.red);
                             }
+                        correctAnswer();
                     }
                 
                 });
@@ -333,11 +335,12 @@ public class Quizpage extends javax.swing.JFrame {
                             answer = option3.getText();
                         }
                         if(isCorrectAnswer()){
-                                option3.setBackground(Color.green);
+                                option3.setBackground(Color.green);//This code can be removed because correctAnswer is better.
                             }
                             else{
                                 option3.setBackground(Color.red);
                             }
+                         correctAnswer();
                     }
                 
                 });
@@ -348,11 +351,12 @@ public class Quizpage extends javax.swing.JFrame {
                             answer = option4.getText();
                         }
                         if(isCorrectAnswer()){
-                                option4.setBackground(Color.green);
+                                option4.setBackground(Color.green); //This code can be removed because correctAnswer is better.
                             }
                             else{
                                 option4.setBackground(Color.red);
                             }
+                         correctAnswer();
                     }
                 
                 });
@@ -364,6 +368,34 @@ public class Quizpage extends javax.swing.JFrame {
             correctAnswer++;
         } 
         return false;
+    }
+    
+    public static void correctAnswer(){
+        Quiz quiz = new Quiz();
+        if(option1.getText().equals(quiz.getRightAnswer())){
+            option1.setBackground(Color.green);
+        }
+        else{
+            option1.setBackground(Color.red);
+        }
+        if(option2.getText().equals(quiz.getRightAnswer())){
+            option2.setBackground(Color.green);
+        }
+        else{
+            option2.setBackground(Color.red);
+        }
+        if(option3.getText().equals(quiz.getRightAnswer())){
+            option3.setBackground(Color.green);
+        }
+        else{
+            option3.setBackground(Color.red);
+        }
+        if(option4.getText().equals(quiz.getRightAnswer())){
+            option4.setBackground(Color.green);
+        }
+        else{
+            option4.setBackground(Color.red);
+        }
     }
     
     public static void performNext(){
