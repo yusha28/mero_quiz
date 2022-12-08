@@ -20,6 +20,8 @@ public class Quizpage extends javax.swing.JFrame {
     public static int sec = 20;
     public static int questionCount = 1;
     public static Timer timer;
+    public static String answer;
+    public static String correctAnswer;
     
     public Quizpage() {
         initComponents();
@@ -285,6 +287,11 @@ public class Quizpage extends javax.swing.JFrame {
                     
            }
         });
+    }
+    public static void isCorrectAnswer(){
+        if(answer.equals(correctAnswer)){
+            
+        }
     }
     
     public static void performNext(){
