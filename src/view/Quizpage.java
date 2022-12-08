@@ -4,8 +4,11 @@
  */
 package view;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
@@ -20,6 +23,8 @@ public class Quizpage extends javax.swing.JFrame {
     public static int sec = 20;
     public static int questionCount = 1;
     public static Timer timer;
+    public static String answer;
+    public static int correctAnswer = 0;
     
     public Quizpage() {
         initComponents();
@@ -281,10 +286,116 @@ public class Quizpage extends javax.swing.JFrame {
                 
                 
                 timer.start();
+                // calling the methods
+                onAnswerSelected();
+                isCorrectAnswer();
                
-                    
+                                
            }
         });
+        
+    }
+    public static void onAnswerSelected(){
+        option1.addItemListener(new ItemListener(){
+                    @Override
+                    public void itemStateChanged(ItemEvent e) {
+                        if(e.getStateChange()==1){
+                            answer = option1.getText();
+                            if(isCorrectAnswer()){
+                                option1.setBackground(Color.green);//This code can be removed because correctAnswer is better.
+                            }
+                            else{
+                                option1.setBackground(Color.red);
+                            }
+                             correctAnswer();
+                        }
+                    }
+                
+                });
+        option2.addItemListener(new ItemListener(){
+                    @Override
+                    public void itemStateChanged(ItemEvent e) {
+                        if(e.getStateChange()==1){
+                            answer = option2.getText();
+                        }
+                        if(isCorrectAnswer()){
+                                option2.setBackground(Color.green);//This code can be removed because correctAnswer is better.
+                            }
+                            else{
+                                option2.setBackground(Color.red);
+                            }
+                        correctAnswer();
+                    }
+                
+                });
+        option3.addItemListener(new ItemListener(){
+                    @Override
+                    public void itemStateChanged(ItemEvent e) {
+                        if(e.getStateChange()==1){
+                            answer = option3.getText();
+                        }
+                        if(isCorrectAnswer()){
+                                option3.setBackground(Color.green);//This code can be removed because correctAnswer is better.
+                            }
+                            else{
+                                option3.setBackground(Color.red);
+                            }
+                         correctAnswer();
+                    }
+                
+                });
+        option4.addItemListener(new ItemListener(){
+                    @Override
+                    public void itemStateChanged(ItemEvent e) {
+                        if(e.getStateChange()==1){
+                            answer = option4.getText();
+                        }
+                        if(isCorrectAnswer()){
+                                option4.setBackground(Color.green); //This code can be removed because correctAnswer is better.
+                            }
+                            else{
+                                option4.setBackground(Color.red);
+                            }
+                         correctAnswer();
+                    }
+                
+                });
+    }
+    public static boolean isCorrectAnswer(){
+        Quiz quiz = new Quiz();
+        if(answer.equals(quiz.getRightAnswer())) {
+            
+            correctAnswer++;
+        } 
+        return false;
+    }
+    
+    public static void correctAnswer(){
+        Quiz quiz = new Quiz();
+        if(option1.getText().equals(quiz.getRightAnswer())){
+            option1.setBackground(Color.green);
+        }
+        else{
+            option1.setBackground(Color.red);
+        }
+        if(option2.getText().equals(quiz.getRightAnswer())){
+            option2.setBackground(Color.green);
+        }
+        else{
+            option2.setBackground(Color.red);
+        }
+        if(option3.getText().equals(quiz.getRightAnswer())){
+            option3.setBackground(Color.green);
+        }
+        else{
+            option3.setBackground(Color.red);
+        }
+        if(option4.getText().equals(quiz.getRightAnswer())){
+            option4.setBackground(Color.green);
+        }
+        else{
+            option4.setBackground(Color.red);
+        }
     }
     
     public static void performNext(){
