@@ -4,6 +4,7 @@
  */
 package view;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -288,16 +289,7 @@ public class Quizpage extends javax.swing.JFrame {
                 // calling the methods
                 onAnswerSelected();
                 isCorrectAnswer();
-                
-//                option1.addItemListener(new ItemListener(){
-//                    @Override
-//                    public void itemStateChanged(ItemEvent e) {
-//                        if(e.getStateChange()==1){
-//                            answer = option1.getText();
-//                        }
-//                    }
-//                
-//                });
+               
                                 
            }
         });
@@ -309,6 +301,12 @@ public class Quizpage extends javax.swing.JFrame {
                     public void itemStateChanged(ItemEvent e) {
                         if(e.getStateChange()==1){
                             answer = option1.getText();
+                            if(isCorrectAnswer()){
+                                option1.setBackground(Color.green);
+                            }
+                            else{
+                                option1.setBackground(Color.red);
+                            }
                         }
                     }
                 
@@ -317,8 +315,14 @@ public class Quizpage extends javax.swing.JFrame {
                     @Override
                     public void itemStateChanged(ItemEvent e) {
                         if(e.getStateChange()==1){
-                            answer = option1.getText();
+                            answer = option2.getText();
                         }
+                        if(isCorrectAnswer()){
+                                option2.setBackground(Color.green);
+                            }
+                            else{
+                                option2.setBackground(Color.red);
+                            }
                     }
                 
                 });
@@ -326,8 +330,14 @@ public class Quizpage extends javax.swing.JFrame {
                     @Override
                     public void itemStateChanged(ItemEvent e) {
                         if(e.getStateChange()==1){
-                            answer = option1.getText();
+                            answer = option3.getText();
                         }
+                        if(isCorrectAnswer()){
+                                option3.setBackground(Color.green);
+                            }
+                            else{
+                                option3.setBackground(Color.red);
+                            }
                     }
                 
                 });
@@ -335,18 +345,25 @@ public class Quizpage extends javax.swing.JFrame {
                     @Override
                     public void itemStateChanged(ItemEvent e) {
                         if(e.getStateChange()==1){
-                            answer = option1.getText();
+                            answer = option4.getText();
                         }
+                        if(isCorrectAnswer()){
+                                option4.setBackground(Color.green);
+                            }
+                            else{
+                                option4.setBackground(Color.red);
+                            }
                     }
                 
                 });
     }
-    public static void isCorrectAnswer(){
+    public static boolean isCorrectAnswer(){
         Quiz quiz = new Quiz();
         if(answer.equals(quiz.getRightAnswer())) {
+            
             correctAnswer++;
         } 
-        
+        return false;
     }
     
     public static void performNext(){
