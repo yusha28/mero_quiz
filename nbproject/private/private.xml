@@ -5,6 +5,7 @@
         <group>
 <<<<<<< HEAD
             <file>file:/C:/Users/Lenovo/OneDrive/Desktop/sabaikoquiz/mero_quiz/src/view/Reg.java</file>
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -20,6 +21,10 @@
 >>>>>>> newRisesh
 >>>>>>> d052124b7f2540c07a83c214244c3cf2ceb90cff
 >>>>>>> 5fb26c5581985ad9d44ae17a1ab92801c33f99ff
+=======
+            <file>file:/C:/Users/Lenovo/OneDrive/Desktop/sabaikoquiz/mero_quiz/src/database/DbConnection.java</file>
+            <file>file:/C:/Users/Lenovo/OneDrive/Desktop/sabaikoquiz/mero_quiz/src/view/HomePage.java</file>
+>>>>>>> yushaDB
         </group>
     </open-files>
 </project-private>
