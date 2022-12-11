@@ -1,10 +1,14 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
 =======
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
 >>>>>>> 85905467ae60a5f993c58029e449736c7741f3b2
+=======
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+>>>>>>> sonuDB
  */
 package view;
 
@@ -13,6 +17,9 @@ package view;
  * @author Acer
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> sonuDB
 public class Quiz extends javax.swing.JFrame {
     
     
@@ -282,6 +289,7 @@ public class Quiz extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
     // End of variables declaration//GEN-END:variables
+<<<<<<< HEAD
 =======
 public class Quiz {
     private String category;
@@ -384,4 +392,6 @@ public class Quiz {
    
     
 >>>>>>> 85905467ae60a5f993c58029e449736c7741f3b2
+=======
+>>>>>>> sonuDB
 }
