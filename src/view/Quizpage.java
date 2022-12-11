@@ -284,8 +284,9 @@ public class Quizpage extends javax.swing.JFrame {
                 });
                 
                 
+                
                 if(sec >= 0){
-                     performNext();
+                     performNext();// check here
                      timer.stop();
                      sec = 20;
                 }
