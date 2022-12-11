@@ -1,6 +1,10 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+<<<<<<< HEAD
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+=======
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+>>>>>>> 85905467ae60a5f993c58029e449736c7741f3b2
  */
 package view;
 
@@ -8,6 +12,7 @@ package view;
  *
  * @author Acer
  */
+<<<<<<< HEAD
 public class Quiz extends javax.swing.JFrame {
     
     
@@ -277,4 +282,106 @@ public class Quiz extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
     // End of variables declaration//GEN-END:variables
+=======
+public class Quiz {
+    private String category;
+    private String rightAnswer;// get right answer from database
+    private String question;
+    private String option1;
+    private String option2;
+    private String option3;
+    private String option4;
+    private int score;
+    private int numberOfCorrectAnswer;// eg. correct answer is 2/10
+
+    public Quiz(String category, String rightAnswer, String question, String option1, String option2, String option3, String option4) {
+        this.category = category;
+        this.rightAnswer = rightAnswer;
+        this.question = question;
+        this.option1 = option1;
+        this.option2 = option2;
+        this.option3 = option3;
+        this.option4 = option4;
+    }
+    
+    Quiz(){
+    
+    }
+    
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public int getNumberOfCorrectAnswer() {
+        return numberOfCorrectAnswer;
+    }
+
+    public void setNumberOfCorrectAnswer(int numberOfCorrectAnswer) {
+        this.numberOfCorrectAnswer = numberOfCorrectAnswer;
+    }
+    
+    
+    public String getRightAnswer() {
+        return rightAnswer;
+    }
+
+    public void setRightAnswer(String rightAnswer) {
+        this.rightAnswer = rightAnswer;
+    }
+
+    public String getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
+    public String getOption1() {
+        return option1;
+    }
+
+    public void setOption1(String option1) {
+        this.option1 = option1;
+    }
+
+    public String getOption2() {
+        return option2;
+    }
+
+    public void setOption2(String option2) {
+        this.option2 = option2;
+    }
+
+    public String getOption3() {
+        return option3;
+    }
+
+    public void setOption3(String option3) {
+        this.option3 = option3;
+    }
+
+    public String getOption4() {
+        return option4;
+    }
+
+    public void setOption4(String option4) {
+        this.option4 = option4;
+    }
+    
+   
+    
+>>>>>>> 85905467ae60a5f993c58029e449736c7741f3b2
 }
