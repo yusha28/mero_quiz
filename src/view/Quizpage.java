@@ -23,7 +23,7 @@ public class Quizpage extends javax.swing.JFrame {
     public static int sec = 20;
     public static int questionCount = 1;
     public static Timer timer;
-    public static String answer;
+    public static String answer = "";
     public static int correctAnswer = 0;
     
     public Quizpage() {
@@ -182,7 +182,11 @@ public class Quizpage extends javax.swing.JFrame {
     private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
         if(questions == 10 && options ==10){
             timer1.setVisible(false);
-            JOptionPane.showMessageDialog(this,"Opening new page","Congrats",JOptionPane.INFORMATION_MESSAGE);
+            
+            String correct = String.valueOf(correctAnswer);// remove after testing code
+            Quiz quiz = new Quiz();
+            quiz.setNumberOfCorrectAnswer(correctAnswer);
+            JOptionPane.showMessageDialog(this,correct+"Opening new page","Congrats",JOptionPane.INFORMATION_MESSAGE);
             
         }
         if(questions < 10){
@@ -195,9 +199,11 @@ public class Quizpage extends javax.swing.JFrame {
 
         if(questions == 10 && options ==10){
             timer1.setVisible(false);
- 
-            JOptionPane.showMessageDialog(this,"Opening new page","Congrats",JOptionPane.INFORMATION_MESSAGE);
-            
+            String correct = String.valueOf(correctAnswer);// remove after testing code
+            JOptionPane.showMessageDialog(this,correct+" Opening new page","Congrats",JOptionPane.INFORMATION_MESSAGE);
+            Quiz quiz = new Quiz();
+            quiz.setNumberOfCorrectAnswer(correctAnswer);
+//            skip.setVisible(false);
         }
         if(questions < 10){
         performNext();
@@ -278,8 +284,9 @@ public class Quizpage extends javax.swing.JFrame {
                 });
                 
                 
+                
                 if(sec >= 0){
-                     performNext();
+                     performNext();// check here
                      timer.stop();
                      sec = 20;
                 }
@@ -363,8 +370,7 @@ public class Quizpage extends javax.swing.JFrame {
     }
     public static boolean isCorrectAnswer(){
         Quiz quiz = new Quiz();
-        if(answer.equals(quiz.getRightAnswer())) {
-            
+        if(answer.equals(quiz.getRightAnswer())) {   
             correctAnswer++;
         } 
         return false;
