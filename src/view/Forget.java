@@ -37,7 +37,7 @@ public class Forget extends javax.swing.JFrame {
         jLabel1.setText("Forget Password");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setText("Email");
+        jLabel2.setText("Phone number");
 
         jButton1.setBackground(new java.awt.Color(102, 102, 255));
         jButton1.setText("Submit");
