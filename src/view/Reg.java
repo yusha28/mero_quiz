@@ -253,7 +253,8 @@ public class Reg extends javax.swing.JFrame {
     }//GEN-LAST:event_passwordActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-
+        login yr=new login();
+        yr.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_loginActionPerformed
 
