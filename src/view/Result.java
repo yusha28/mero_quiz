@@ -181,11 +181,12 @@ public class Result extends javax.swing.JFrame {
                 else{feedback.setText("Failed! Better Luck Next Time");
                 
             }
-        });
+        };
+    });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel feedback;
+    public static javax.swing.JLabel feedback;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
