@@ -18,6 +18,7 @@ public class Quiz {
     private String option4;
     private int score;
     private int numberOfCorrectAnswer;// eg. correct answer is 2/10
+    // Use this for adding questions 
 
     public Quiz(String category, String rightAnswer, String question, String option1, String option2, String option3, String option4) {
         this.category = category;
