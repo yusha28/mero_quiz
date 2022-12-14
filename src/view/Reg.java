@@ -256,7 +256,7 @@ public class Reg extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_loginActionPerformed
-
+//database connection
     private void createaccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createaccountActionPerformed
 if(confirmpassword.getText().equals(password.getText())){
         if(tick.isSelected()){
