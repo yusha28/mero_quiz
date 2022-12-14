@@ -85,8 +85,7 @@ public class Forget extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 //open reset Jframe in forget Jframe
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       Reset jr3 = new Reset();
-       jr3.show();// TODO add your handling code here:
+      // TODO add your handling code here:
        
               
     }//GEN-LAST:event_jButton1ActionPerformed
