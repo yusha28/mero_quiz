@@ -273,7 +273,7 @@ public class Quizpage extends javax.swing.JFrame {
                         sec--;
                         }
                         else{
-                            questionCount++;
+//                            questionCount++;
                             sec = 20;
                             performNext();
                             
