@@ -151,7 +151,7 @@ public class login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//reg page
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 Reg y=new Reg  ();
 y.setVisible(true);// TODO add your handling code here:
