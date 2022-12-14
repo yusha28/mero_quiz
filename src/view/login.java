@@ -168,6 +168,7 @@ y.setVisible(true);// TODO add your handling code here:
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         String pnum= email.getText();
         String pas = pass.getText();
+        
         if (pnum.isEmpty()||pas.isEmpty()){
             //Error dekhaune
             JOptionPane.showMessageDialog(this,"All Fields are required.","value error",JOptionPane.ERROR_MESSAGE);

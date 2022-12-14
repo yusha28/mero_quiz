@@ -30,7 +30,7 @@ public class DbConnection {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            connection = DriverManager.getConnection(
+            connection  = DriverManager.getConnection(
 
                     "jdbc:mysql://localhost:3306/sonu1",username,password);
 
