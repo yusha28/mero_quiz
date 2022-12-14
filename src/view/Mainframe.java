@@ -192,7 +192,7 @@ public class Mainframe extends javax.swing.JFrame {
 
             }
     }//GEN-LAST:event_exitexitActionPerformed
-
+// else if start
     /**
      * @param args the command line arguments
      */
