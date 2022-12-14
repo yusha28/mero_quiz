@@ -5,10 +5,16 @@
 <<<<<<< HEAD
         <group>
 <<<<<<< HEAD
+            <file>file:/C:/Users/Acer/Desktop/New_Quiz/mero_quiz/src/view/Reg.java</file>
+            <file>file:/C:/Users/Acer/Desktop/New_Quiz/mero_quiz/src/view/login.java</file>
+            <file>file:/C:/Users/Acer/Desktop/New_Quiz/mero_quiz/src/database/DbConnection.java</file>
+=======
+<<<<<<< HEAD
             <file>file:/C:/Users/Acer/Desktop/M/mero_quiz/src/view/Reg.java</file>
 =======
             <file>file:/C:/Users/Lenovo/OneDrive/Desktop/momo/mero_quiz/src/view/Reg.java</file>
 >>>>>>> 3c882b12c7a0bdb9ca9d1fad5c648ecd5b7e845c
+>>>>>>> 0232075c16651f36ebc0cf7b3d1bb3cfa71e6a53
         </group>
 =======
         <group/>
