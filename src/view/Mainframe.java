@@ -1,5 +1,6 @@
 
 import javax.swing.JOptionPane;
+import view.HomePage;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -146,9 +147,9 @@ public class Mainframe extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnscoreboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnscoreboardActionPerformed
-        desktopPaneControl.removeAll();
-        Frame3 f3=new Frame3();
-        desktopPaneControl.add(f3).setVisible(true);
+//        desktopPaneControl.removeAll();
+//        Frame3 f3=new Frame3();
+//        desktopPaneControl.add(f3).setVisible(true);
         
     }//GEN-LAST:event_btnscoreboardActionPerformed
 
@@ -157,9 +158,12 @@ public class Mainframe extends javax.swing.JFrame {
     }//GEN-LAST:event_btnsettingActionPerformed
 
     private void btnhomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnhomeActionPerformed
-        desktopPaneControl.removeAll();
-        Frame1 f1=new Frame1(); //JInternalFrame object
-        desktopPaneControl.add(f1).setVisible(true);
+        HomePage main = new HomePage();    
+        main.setVisible(true);
+        this.dispose();
+//        desktopPaneControl.removeAll();
+//        Frame1 f1=new Frame1(); //JInternalFrame object
+//        desktopPaneControl.add(f1).setVisible(true);
                 
                 
                 
@@ -167,9 +171,9 @@ public class Mainframe extends javax.swing.JFrame {
 
     private void btnprofileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnprofileActionPerformed
         
-        desktopPaneControl.removeAll();
-        Frame2 f2=new Frame2();
-        desktopPaneControl.add(f2).setVisible(true);
+//        desktopPaneControl.removeAll();
+//        Frame2 f2=new Frame2();
+//        desktopPaneControl.add(f2).setVisible(true);
     }//GEN-LAST:event_btnprofileActionPerformed
 
     private void exitexitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitexitActionPerformed
