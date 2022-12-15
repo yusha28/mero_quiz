@@ -166,40 +166,67 @@ y.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_passActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        String pnum= email.getText();
-        String pas = pass.getText();
+    String email1 = email.getText();
+        String password1=pass.getText();
         
-        if (pnum.isEmpty()||pas.isEmpty()){
-            //Error dekhaune
-            JOptionPane.showMessageDialog(this,"All Fields are required.","value error",JOptionPane.ERROR_MESSAGE);
-        } else {
-            DbConnection dbConnection;
-            dbConnection = new DbConnection();
-        String selectQuery = String.format("select Email,Password from registration where Email='%s'Password='%s'",pnum,pas);
-        System.out.println(selectQuery);
-            
-//                ResultSet result = dbConnection.retrieve(selectQuery);
-                try{
-                  ResultSet result = dbConnection.retrieve(selectQuery);
-                String DbPnum = result.getString("Email");
-                String Dbpass = result.getString("Password");
-                 if (pnum.equals(DbPnum)&&pas.equals(Dbpass)){
-                JOptionPane.showMessageDialog(this,"logged in sucessfully","logged in",JOptionPane.PLAIN_MESSAGE);
-                System.out.println("logged in");
-                HomePage jF3 = new HomePage();
-                jF3.setVisible(true);
-                email.setText("");
-                pass.setText("");
+        StudentController tc = new StudentController();
+        ResultSet retrievedTraveller = tc.retrieveTraveller(email1,password1);
 
-            } else{
-                JOptionPane.showMessageDialog(this,"Invalid credentials","invalid!!",JOptionPane.ERROR_MESSAGE);
-
+        try {
+             if(retrievedTraveller.next()){
+                
+                this.dispose();
+                UserDashBoard user1=new UserDashBoard(retrievedTraveller.getInt("tr_id"));
+                user1.setVisible(true);
             }
-                }
-                catch(Exception e){
-                    System.out.println(e);
-                   
-                }
+            else{
+             JOptionPane.showMessageDialog(null,"Please enter valid email or password.");
+            }
+         } catch (Exception ex) {
+             Logger.getLogger(loginpage.class.getName()).log(Level.SEVERE, null, ex);
+         }
+                     
+        
+        
+//    }    
+//String pnum= email.getText();
+//        String pas = pass.getText();
+//        
+//        if (pnum.isEmpty()||pas.isEmpty()){
+//            //Error dekhaune
+//            JOptionPane.showMessageDialog(this,"All Fields are required.","value error",JOptionPane.ERROR_MESSAGE);
+//        } else {
+//            DbConnection dbConnection;
+//            dbConnection = new DbConnection();
+//        String selectQuery = String.format("SELECT * FROM sonu1.registration; where Email='%s' AND Password='%s'",pnum,pas);
+//        System.out.println(selectQuery);
+//            
+////                ResultSet result = dbConnection.retrieve(selectQuery);
+//                try{
+//                  ResultSet result = dbConnection.retrieve(selectQuery);
+//                String DbPnum = result.getString("Email");
+//                String Dbpass = result.getString("Password");
+                
+//                 if (pnum.equals(DbPnum)&&pas.equals(Dbpass)){
+//                JOptionPane.showMessageDialog(this,"logged in sucessfully","logged in",JOptionPane.PLAIN_MESSAGE);
+//                System.out.println("logged in");
+//                HomePage jF3 = new HomePage();
+//                jF3.setVisible(true);
+//                email.setText("");
+////                pass.setText("");
+//if (result.next()){
+//    JOptionPane.showMessageDialog(this,"valid credentials","invalid!!",JOptionPane.ERROR_MESSAGE);
+
+   
+////                } else{
+//                JOptionPane.showMessageDialog(this,"Invalid credentials","invalid!!",JOptionPane.ERROR_MESSAGE);
+
+//            }
+//                }
+//                catch(Exception e){
+//                    System.out.println(e);
+//                   
+//                }
 
            
 
@@ -215,7 +242,7 @@ y.setVisible(true);// TODO add your handling code here:
 
 
 
-        }
+        
 
         
         
@@ -265,7 +292,7 @@ ss.setVisible(true);// TODO add your handling code here:
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField email;
+    public static javax.swing.JTextField email;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
