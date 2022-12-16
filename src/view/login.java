@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-
+import database.DbConnection;
+import javax.swing.*;
+import java.sql.*;
 /**
  *
  * @author Acer
@@ -31,8 +33,8 @@ public class login extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        email = new javax.swing.JTextField();
+        pass = new javax.swing.JPasswordField();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
@@ -53,23 +55,33 @@ public class login extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel3.setText("Login to continue");
 
-        jTextField1.setText("username123@gmail.com");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        email.setText("username123@gmail.com");
+        email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                emailActionPerformed(evt);
             }
         });
 
-        jPasswordField1.setText("jPasswordField1");
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        pass.setText("jPasswordField1");
+        pass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                passActionPerformed(evt);
             }
         });
 
         jButton2.setText("Login");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Forget password");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -95,8 +107,8 @@ public class login extends javax.swing.JFrame {
                                 .addGap(6, 6, 6)
                                 .addComponent(jLabel3))
                             .addComponent(jLabel2)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pass, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(233, 233, 233)))
                 .addContainerGap())
         );
@@ -114,9 +126,9 @@ public class login extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(35, 35, 35)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pass, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 188, Short.MAX_VALUE)
@@ -139,18 +151,110 @@ public class login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//reg page
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+Reg y=new Reg  ();
+y.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_emailActionPerformed
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_passActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    String email1 = email.getText();
+        String password1=pass.getText();
+        
+        StudentController tc = new StudentController();
+        ResultSet retrievedTraveller = tc.retrieveTraveller(email1,password1);
+
+        try {
+             if(retrievedTraveller.next()){
+                
+                this.dispose();
+                UserDashBoard user1=new UserDashBoard(retrievedTraveller.getInt("tr_id"));
+                user1.setVisible(true);
+            }
+            else{
+             JOptionPane.showMessageDialog(null,"Please enter valid email or password.");
+            }
+         } catch (Exception ex) {
+             Logger.getLogger(loginpage.class.getName()).log(Level.SEVERE, null, ex);
+         }
+                     
+        
+        
+//    }    
+//String pnum= email.getText();
+//        String pas = pass.getText();
+//        
+//        if (pnum.isEmpty()||pas.isEmpty()){
+//            //Error dekhaune
+//            JOptionPane.showMessageDialog(this,"All Fields are required.","value error",JOptionPane.ERROR_MESSAGE);
+//        } else {
+//            DbConnection dbConnection;
+//            dbConnection = new DbConnection();
+//        String selectQuery = String.format("SELECT * FROM sonu1.registration; where Email='%s' AND Password='%s'",pnum,pas);
+//        System.out.println(selectQuery);
+//            
+////                ResultSet result = dbConnection.retrieve(selectQuery);
+//                try{
+//                  ResultSet result = dbConnection.retrieve(selectQuery);
+//                String DbPnum = result.getString("Email");
+//                String Dbpass = result.getString("Password");
+                
+//                 if (pnum.equals(DbPnum)&&pas.equals(Dbpass)){
+//                JOptionPane.showMessageDialog(this,"logged in sucessfully","logged in",JOptionPane.PLAIN_MESSAGE);
+//                System.out.println("logged in");
+//                HomePage jF3 = new HomePage();
+//                jF3.setVisible(true);
+//                email.setText("");
+////                pass.setText("");
+//if (result.next()){
+//    JOptionPane.showMessageDialog(this,"valid credentials","invalid!!",JOptionPane.ERROR_MESSAGE);
+
+   
+////                } else{
+//                JOptionPane.showMessageDialog(this,"Invalid credentials","invalid!!",JOptionPane.ERROR_MESSAGE);
+
+//            }
+//                }
+//                catch(Exception e){
+//                    System.out.println(e);
+//                   
+//                }
+
+           
+
+
+
+
+
+
+
+
+
+//                if(pnum==DbPnum)
+
+
+
+        
+
+        
+        
+        
+    //        HomePage t=new HomePage();
+    //t.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+Forget ss= new Forget();
+ss.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -188,6 +292,7 @@ public class login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JTextField email;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -195,7 +300,6 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPasswordField pass;
     // End of variables declaration//GEN-END:variables
 }
