@@ -24,15 +24,15 @@ public class DbConnection {
 
         try {
 
-            String username = "sql6583060";
+            String username = "root";
 
-            String password = "jeAEUSvpYB";
+            String password = "Yusha@123";
 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             connection = DriverManager.getConnection(
 
-                    "jdbc:mysql://sql6.freesqldatabase.com:3306/sql6583060",username,password);
+                    "jdbc:mysql://localhost:3306/Quiz",username,password);
 
 
 
