@@ -279,6 +279,8 @@ if(confirmpassword.getText().equals(password.getText())){
                               "WARNING", 
                               JOptionPane.WARNING_MESSAGE);
 }
+   login yr=new login();
+        yr.setVisible(true);  
         // TODO add your handling code here:
     }//GEN-LAST:event_createaccountActionPerformed
 
