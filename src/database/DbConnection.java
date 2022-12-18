@@ -37,10 +37,14 @@ public class DbConnection {
             connection  = DriverManager.getConnection(
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "jdbc:mysql://localhost:3306/sonu1",username,password);
 =======
                     "jdbc:mysql://localhost:3306/Quiz",username,password);
 >>>>>>> starbucks
+=======
+                    "jdbc:mysql://localhost:3306/sonu1","root","sonu@2002");
+>>>>>>> sonuDB
 
 
 
