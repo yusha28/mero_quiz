@@ -32,7 +32,7 @@ public class DbConnection {
 
             connection  = DriverManager.getConnection(
 
-                    "jdbc:mysql://localhost:3306/sonu1",username,password);
+                    "jdbc:mysql://localhost:3306/sonu1","root","sonu@2002");
 
 
 
