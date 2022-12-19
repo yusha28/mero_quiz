@@ -405,6 +405,9 @@ public class Quizpage extends javax.swing.JFrame {
     }
     
     public static void performNext(){
+        Quiz q;
+        quiz_Controller controller = new quiz_Controller();
+        Quiz quiz =  new Quiz(); 
         if(questions == 10 && options ==10){
             timer.stop();
             questions = 9;
