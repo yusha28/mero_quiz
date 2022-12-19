@@ -4,10 +4,18 @@
  */
 package controller;
 
+import java.sql.SQLException;
+import java.util.List;
+import view.Quiz;
+
 /**
  *
  * @author Acer
  */
 public class quiz_Controller {
+      public List<Quiz> m(String category)throws SQLException{
+      
+          
+      }
     
 }
