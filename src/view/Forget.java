@@ -4,6 +4,11 @@
  */
 package view;
 
+import controller.StudentController;
+import database.DbConnection;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Acer
@@ -28,7 +33,7 @@ public class Forget extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        phonenum = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -57,7 +62,7 @@ public class Forget extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(phonenum, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(169, 169, 169))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -75,7 +80,7 @@ public class Forget extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(phonenum, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addComponent(jButton1)
                 .addContainerGap(193, Short.MAX_VALUE))
@@ -86,9 +91,36 @@ public class Forget extends javax.swing.JFrame {
 //open reset Jframe in forget Jframe
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
       // TODO add your handling code here:
+      String pp= phonenum.getText();
+      
+      DbConnection dbConnection;
+      dbConnection = new DbConnection();
+     try{
+        String selectQuery = String.format("select * from registration  where PhoneNumber='%s'",pp);
+        System.out.println(selectQuery);
+            
+ 
+        StudentController tc = new StudentController();
+        ResultSet retrieveStudent = tc.retrieveStudent(phonenum);
+//                  ResultSet result = dbConnection.retrieve(selectQuery);
+        String DbPnum = result.getString("PhoneNumber");
+         
+        
+       if (pp.equals(DbPnum)){
+            
        Reset so = new Reset();
        so.setVisible(true);
+       this.dispose();
               
+        }else{
+            JOptionPane.showMessageDialog(this,"invalid number","invalid!!",JOptionPane.ERROR_MESSAGE);
+        }
+         
+     } catch (Exception e){
+         
+     }
+ 
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -130,6 +162,6 @@ public class Forget extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField phonenum;
     // End of variables declaration//GEN-END:variables
 }

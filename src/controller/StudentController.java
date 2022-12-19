@@ -21,10 +21,20 @@ public class StudentController{
         return result;
        
     }
-    public ResultSet validTraveller(String email, String number){
+    public ResultSet retrieveStudent(String email, String password){
  
         String validQuery = String.format(
-                "SELECT * FROM registration_table WHERE tr_email='%s' AND tr_number='%s'",email,number);
+                "SELECT * FROM registration WHERE Email='%s' AND Password='%s'",email,password);
+        connection = new DbConnection();
+        ResultSet result = connection.retrieve(validQuery);
+        return result;
+
+    }
+    
+     public ResultSet retrieveStudent(String PhoneNumber ){
+ 
+        String validQuery = String.format(
+                "SELECT * FROM registration WHERE PhoneNumber='%s'" ,PhoneNumber);
         connection = new DbConnection();
         ResultSet result = connection.retrieve(validQuery);
         return result;
