@@ -9,6 +9,7 @@ import database.DbConnection;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
+
 /**
  *
  * @author Acer
@@ -91,35 +92,25 @@ public class Forget extends javax.swing.JFrame {
 //open reset Jframe in forget Jframe
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
       // TODO add your handling code here:
-      String pp= phonenum.getText();
-      
-      DbConnection dbConnection;
-      dbConnection = new DbConnection();
-     try{
-        String selectQuery = String.format("select * from registration  where PhoneNumber='%s'",pp);
-        System.out.println(selectQuery);
-            
- 
-        StudentController tc = new StudentController();
-        ResultSet retrieveStudent = tc.retrieveStudent(phonenum);
-//                  ResultSet result = dbConnection.retrieve(selectQuery);
-        String DbPnum = result.getString("PhoneNumber");
-         
         
-       if (pp.equals(DbPnum)){
-            
-       Reset so = new Reset();
-       so.setVisible(true);
-       this.dispose();
-              
-        }else{
-            JOptionPane.showMessageDialog(this,"invalid number","invalid!!",JOptionPane.ERROR_MESSAGE);
-        }
-         
-     } catch (Exception e){
-         
-     }
- 
+        String number2 = phonenum.getText();
+        
+        StudentController tc = new StudentController();
+        ResultSet validStudent = tc.retrieveStudent(number2);
+
+        try {
+             if(validStudent.next()){
+                
+                this.dispose();
+                Reset res =new Reset();
+                res.setVisible(true);
+            }
+            else{
+             JOptionPane.showMessageDialog(null,"Please enter valid number.");
+            }
+         } catch (Exception ex) {
+             ex.printStackTrace();
+         }
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
