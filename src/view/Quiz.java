@@ -29,7 +29,7 @@ public class Quiz {
         this.option4 = option4;
     }
     
-    Quiz(){
+    public Quiz(){
     
     }
     

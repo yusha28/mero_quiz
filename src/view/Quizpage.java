@@ -25,8 +25,14 @@ public class Quizpage extends javax.swing.JFrame {
     public static Timer timer;
     public static String answer = "";
     public static int correctAnswer = 0;
+    public static String category;
     
     public Quizpage() {
+        initComponents();
+    }
+    
+    public Quizpage(String category){
+        this.category = category;
         initComponents();
     }
 
