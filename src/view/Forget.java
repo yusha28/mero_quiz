@@ -4,6 +4,7 @@
  */
 package view;
 
+import controller.StudentController;
 import database.DbConnection;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
@@ -98,8 +99,9 @@ public class Forget extends javax.swing.JFrame {
         String selectQuery = String.format("select * from registration  where PhoneNumber='%s'",pp);
         System.out.println(selectQuery);
             
-        ResultSet result = dbConnection.retrieve(selectQuery);
-
+ 
+        StudentController tc = new StudentController();
+        ResultSet retrieveStudent = tc.retrieveStudent(phonenum);
 //                  ResultSet result = dbConnection.retrieve(selectQuery);
         String DbPnum = result.getString("PhoneNumber");
          

@@ -7,6 +7,11 @@ import database.DbConnection;
 import javax.swing.*;
 import java.sql.*;
 import javax.swing.JOptionPane;
+import controller.StudentController;
+import java.util.logging.Logger;
+import java.util.logging.Level;
+
+
 /**
  *
  * @author Acer
@@ -172,47 +177,73 @@ y.setVisible(true);// TODO add your handling code here:
 
 
 
-String pnum= email.getText();
+        String pnum= email.getText();
         String pas = pass.getText();
         
         if (pnum.isEmpty()||pas.isEmpty()){
             //Error dekhaune
             JOptionPane.showMessageDialog(this,"All Fields are required.","value error",JOptionPane.ERROR_MESSAGE);
         } else {
-            try{
-            DbConnection dbConnection;
-            dbConnection = new DbConnection();
-        String selectQuery = String.format("select * from registration  where Email='%s' AND Password='%s'",pnum,pas);
-        System.out.println(selectQuery);
-            
-                ResultSet result = dbConnection.retrieve(selectQuery);
+              StudentController tc = new StudentController();
+        ResultSet retrieveStudent = tc.retrieveStudent(pnum,pas);
 
-//                  ResultSet result = dbConnection.retrieve(selectQuery);
-                String DbPnum = result.getString("Email");
-                String Dbpass = result.getString("Password");
+          if(pnum.equals("") && pas.equals("")){
+             JOptionPane.showMessageDialog(null,"Email and password field cannot be empty");
+        }
+        
+        
+        try {
+            if(retrieveStudent.next()){
                 
-                 if (pnum.equals(DbPnum)&&pas.equals(Dbpass)){
-                JOptionPane.showMessageDialog(this,"logged in sucessfully","logged in",JOptionPane.PLAIN_MESSAGE);
-                System.out.println("logged in");
-                HomePage jF3 = new HomePage();
-                jF3.setVisible(true);
                 this.dispose();
-                email.setText("");
-                pass.setText("");
-                    if (result.next()){
-        JOptionPane.showMessageDialog(this,"valid credentials","invalid!!",JOptionPane.ERROR_MESSAGE);
-
-   
-                } else{
-                JOptionPane.showMessageDialog(this,"Invalid credentials","invalid!!",JOptionPane.ERROR_MESSAGE);
-
+              HomePage user1=new HomePage();
+              user1.setVisible(true);
+                      
+           }
+            
+            else{
+             JOptionPane.showMessageDialog(null,"Please enter valid email or password.");
             }
-                }
-                }
-                catch(Exception e){
-                    System.out.println(e);
-                   
-                }
+         } catch (Exception ex) {
+             Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+         }
+
+//            try{
+//            DbConnection dbConnection;
+//            dbConnection = new DbConnection();
+//            String selectQuery = String.format("select * from registration where Email='%s' AND Password='%s'",pnum,pas);
+//        System.out.println(selectQuery);
+//                 StudentController tc = new StudentController();
+//                 tc.retrieveStudent(pnum,pas);
+//                
+//                ResultSet result = dbConnection.retrieve(selectQuery);
+//
+////                  ResultSet result = dbConnection.retrieve(selectQuery);
+//                String DbPnum = result.getString("Email");
+//                String Dbpass = result.getString("Password");
+//                
+//                 if (pnum.equals(DbPnum)&&pas.equals(Dbpass)){
+//                JOptionPane.showMessageDialog(this,"logged in sucessfully","logged in",JOptionPane.PLAIN_MESSAGE);
+//                System.out.println("logged in");
+//                HomePage jF3 = new HomePage();
+//                jF3.setVisible(true);
+//                this.dispose();
+//                email.setText("");
+//                pass.setText("");
+//                    if (result.next()){
+//        JOptionPane.showMessageDialog(this,"valid credentials","invalid!!",JOptionPane.ERROR_MESSAGE);
+//
+//   
+//                } else{
+//                JOptionPane.showMessageDialog(this,"Invalid credentials","invalid!!",JOptionPane.ERROR_MESSAGE);
+//
+//            }
+//                }
+//                }
+//                catch(Exception e){
+//                    System.out.println(e);
+//                   
+//                }
 
         }
     }//GEN-LAST:event_jButton2ActionPerformed
