@@ -277,7 +277,7 @@ public class HomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-           new programming().setVisible(true);
+           new Quizpage().setVisible(true);
            this.setVisible(false);
            
            

@@ -24,15 +24,27 @@ public class DbConnection {
 
         try {
 
-            String username = "sql6583060";
+            String username = "root";
 
-            String password = "jeAEUSvpYB";
+<<<<<<< HEAD
+            String password = "sonu@2002";
+=======
+            String password = "Yusha@123";
+>>>>>>> starbucks
 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            connection = DriverManager.getConnection(
+            connection  = DriverManager.getConnection(
 
-                    "jdbc:mysql://sql6.freesqldatabase.com:3306/sql6583060",username,password);
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "jdbc:mysql://localhost:3306/sonu1",username,password);
+=======
+                    "jdbc:mysql://localhost:3306/Quiz",username,password);
+>>>>>>> starbucks
+=======
+                    "jdbc:mysql://localhost:3306/sonu1","root","sonu@2002");
+>>>>>>> sonuDB
 
 
 

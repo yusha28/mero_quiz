@@ -2,6 +2,8 @@ package controller;
 import javax.sound.sampled.SourceDataLine;
 
 import database.DbConnection;
+import java.sql.*;
+
 import model.Student;
 public class StudentController{
     DbConnection connection;
@@ -17,6 +19,16 @@ public class StudentController{
         connection = new DbConnection();
         int result = connection.manipulate(insertQuery);
         return result;
+       
+    }
+    public ResultSet validTraveller(String email, String number){
+ 
+        String validQuery = String.format(
+                "SELECT * FROM registration_table WHERE tr_email='%s' AND tr_number='%s'",email,number);
+        connection = new DbConnection();
+        ResultSet result = connection.retrieve(validQuery);
+        return result;
+
     }
 }
 
