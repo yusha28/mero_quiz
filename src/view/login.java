@@ -171,32 +171,7 @@ y.setVisible(true);// TODO add your handling code here:
 
 
 
-//    String email1 = email.getText();
 
-
-
-//        String password1=pass.getText();
-//        
-//        StudentController tc = new StudentController();
-//        ResultSet retrievedTraveller = tc.retrieveTraveller(email1,password1);
-//
-//        try {
-//             if(retrievedTraveller.next()){
-//                
-//                this.dispose();
-//                UserDashBoard user1=new UserDashBoard(retrievedTraveller.getInt("tr_id"));
-//                user1.setVisible(true);
-//            }
-//            else{
-//             JOptionPane.showMessageDialog(null,"Please enter valid email or password.");
-//            }
-//         } catch (Exception ex) {
-//             Logger.getLogger(loginpage.class.getName()).log(Level.SEVERE, null, ex);
-//         }
-//                     
-//        
-//        
-////    }    
 String pnum= email.getText();
         String pas = pass.getText();
         
@@ -204,13 +179,14 @@ String pnum= email.getText();
             //Error dekhaune
             JOptionPane.showMessageDialog(this,"All Fields are required.","value error",JOptionPane.ERROR_MESSAGE);
         } else {
+            try{
             DbConnection dbConnection;
             dbConnection = new DbConnection();
-        String selectQuery = String.format("select *from login ; where Email='%s' AND Password='%s'",pnum,pas);
+        String selectQuery = String.format("select * from registration  where Email='%s' AND Password='%s'",pnum,pas);
         System.out.println(selectQuery);
             
                 ResultSet result = dbConnection.retrieve(selectQuery);
-                try{}
+
 //                  ResultSet result = dbConnection.retrieve(selectQuery);
                 String DbPnum = result.getString("Email");
                 String Dbpass = result.getString("Password");
@@ -220,10 +196,11 @@ String pnum= email.getText();
                 System.out.println("logged in");
                 HomePage jF3 = new HomePage();
                 jF3.setVisible(true);
+                this.dispose();
                 email.setText("");
                 pass.setText("");
-if (result.next()){
-    JOptionPane.showMessageDialog(this,"valid credentials","invalid!!",JOptionPane.ERROR_MESSAGE);
+                    if (result.next()){
+        JOptionPane.showMessageDialog(this,"valid credentials","invalid!!",JOptionPane.ERROR_MESSAGE);
 
    
                 } else{
@@ -231,37 +208,19 @@ if (result.next()){
 
             }
                 }
+                }
                 catch(Exception e){
                     System.out.println(e);
                    
                 }
 
-           
-
-
-
-
-
-
-
-
-
-                if(pnum==DbPnum)
-
-
-
-        
-
-        
-        
-        
-            HomePage t=new HomePage();
-    t.setVisible(true);// TODO add your handling code here:
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 Forget ss= new Forget();
-ss.setVisible(true);// TODO add your handling code here:
+ss.setVisible(true);
+this.dispose();// TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
