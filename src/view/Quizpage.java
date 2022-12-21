@@ -4,11 +4,14 @@
  */
 package view;
 
+import controller.quiz_Controller;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.util.List;
+import java.util.Random;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
@@ -26,6 +29,9 @@ public class Quizpage extends javax.swing.JFrame {
     public static String answer = "";
     public static int correctAnswer = 0;
     public static String category;
+    public static int selectedNumberFromRandom;
+    public boolean isOptionSelected;
+    public static int randomNum;
     
     public Quizpage() {
         initComponents();
@@ -414,6 +420,8 @@ public class Quizpage extends javax.swing.JFrame {
         Quiz q;
         quiz_Controller controller = new quiz_Controller();
         Quiz quiz =  new Quiz(); 
+        
+        // use id and fetch data
         if(questions == 10 && options ==10){
             timer.stop();
             questions = 9;
@@ -433,12 +441,24 @@ public class Quizpage extends javax.swing.JFrame {
         }
         sec = 20;
         timer1.setVisible(true);
-        Questions.setText(question1(questions));
-        option1.setText(optionss1(options));
-        option2.setText(optionss2(options));
-        option3.setText(optionss3(options));
-        option4.setText(optionss4(options));
-        count.setText(String.valueOf(questionCount));
+       
+        try{
+            System.out.println("Category: "+category);
+            List<Quiz> quizList = controller.m("programmingLanguage");
+            Random ran = new Random();
+            int index = ran.nextInt(0,2);// correct this code...........................................................................
+            q = quizList.get(index);
+            Questions.setText(q.getQuestion());
+            option1.setText(q.getOption1());
+            option2.setText(q.getOption2());
+            option3.setText(q.getOption3());
+            option4.setText(q.getOption4());
+            count.setText(String.valueOf(questionCount));
+        }
+        catch(Exception e){
+            
+        }
+        
         questions++;
         options++;
         questionCount++;
