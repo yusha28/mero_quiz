@@ -38,15 +38,15 @@ public class HomePage extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        ProgrammingLanguage = new javax.swing.JButton();
+        Mathematics = new javax.swing.JButton();
+        Science = new javax.swing.JButton();
+        Grammar = new javax.swing.JButton();
+        Gk = new javax.swing.JButton();
+        History = new javax.swing.JButton();
+        Others = new javax.swing.JButton();
+        AI = new javax.swing.JButton();
+        Geography = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,75 +82,75 @@ public class HomePage extends javax.swing.JFrame {
         jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\OneDrive\\Pictures\\others.png")); // NOI18N
         jLabel9.setText("jLabel9");
 
-        jButton1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jButton1.setText("Programming Language");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ProgrammingLanguage.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        ProgrammingLanguage.setText("Programming Language");
+        ProgrammingLanguage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ProgrammingLanguageActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jButton2.setText("Mathematics");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Mathematics.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        Mathematics.setText("Mathematics");
+        Mathematics.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                MathematicsActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jButton3.setText("Science");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        Science.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        Science.setText("Science");
+        Science.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                ScienceActionPerformed(evt);
             }
         });
 
-        jButton4.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jButton4.setText("Grammar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        Grammar.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        Grammar.setText("Grammar");
+        Grammar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                GrammarActionPerformed(evt);
             }
         });
 
-        jButton5.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jButton5.setText("GK");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        Gk.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        Gk.setText("GK");
+        Gk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                GkActionPerformed(evt);
             }
         });
 
-        jButton6.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jButton6.setText("History");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        History.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        History.setText("History");
+        History.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                HistoryActionPerformed(evt);
             }
         });
 
-        jButton7.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jButton7.setText("Others");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        Others.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        Others.setText("Others");
+        Others.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                OthersActionPerformed(evt);
             }
         });
 
-        jButton8.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jButton8.setText("AI");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        AI.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        AI.setText("AI");
+        AI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                AIActionPerformed(evt);
             }
         });
 
-        jButton9.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jButton9.setText("Geography");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        Geography.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        Geography.setText("Geography");
+        Geography.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                GeographyActionPerformed(evt);
             }
         });
 
@@ -160,30 +160,30 @@ public class HomePage extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(113, 113, 113)
-                .addComponent(jButton9)
+                .addComponent(Geography)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton8)
+                .addComponent(AI)
                 .addGap(263, 263, 263)
-                .addComponent(jButton7)
+                .addComponent(Others)
                 .addGap(109, 109, 109))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(74, 74, 74)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(jButton1)
+                        .addComponent(ProgrammingLanguage)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2)
+                        .addComponent(Mathematics)
                         .addGap(213, 213, 213)
-                        .addComponent(jButton3)
+                        .addComponent(Science)
                         .addGap(129, 129, 129))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(37, 37, 37)
-                        .addComponent(jButton4)
+                        .addComponent(Grammar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5)
+                        .addComponent(Gk)
                         .addGap(270, 270, 270)
-                        .addComponent(jButton6)
+                        .addComponent(History)
                         .addGap(111, 111, 111))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -222,9 +222,9 @@ public class HomePage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton1)
-                        .addComponent(jButton2))
-                    .addComponent(jButton3))
+                        .addComponent(ProgrammingLanguage)
+                        .addComponent(Mathematics))
+                    .addComponent(Science))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -234,11 +234,10 @@ public class HomePage extends javax.swing.JFrame {
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton5)
-                        .addComponent(jButton6)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Gk)
+                    .addComponent(History)
+                    .addComponent(Grammar))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -248,12 +247,12 @@ public class HomePage extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addComponent(jButton9))
+                        .addComponent(Geography))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton7)
-                            .addComponent(jButton8))))
+                            .addComponent(Others)
+                            .addComponent(AI))))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
 
@@ -276,61 +275,61 @@ public class HomePage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel1MouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-           new Quizpage().setVisible(true);
-           this.setVisible(false);
+    private void ProgrammingLanguageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProgrammingLanguageActionPerformed
+           Quizpage page = new Quizpage(category:"ProgrammingLanguage");
+          page.setVisible(true);
            
            
         
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_ProgrammingLanguageActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-           new programming().setVisible(true);
-           this.setVisible(false);
+    private void ScienceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ScienceActionPerformed
+            Quizpage page = new Quizpage(category:"Science");
+          page.setVisible(true);
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_ScienceActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-           new programming().setVisible(true);
-           this.setVisible(false);
+    private void MathematicsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MathematicsActionPerformed
+           Quizpage page = new Quizpage(category:"Mathematics");
+          page.setVisible(true);
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_MathematicsActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-           new programming().setVisible(true);
-           this.setVisible(false);
+    private void GrammarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GrammarActionPerformed
+            Quizpage page = new Quizpage(category:"Grammar");
+          page.setVisible(true);
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_GrammarActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-           new programming().setVisible(true);
-           this.setVisible(false);
+    private void GkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GkActionPerformed
+           Quizpage page = new Quizpage(category:"Gk");
+          page.setVisible(true);
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_GkActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-           new programming().setVisible(true);
-           this.setVisible(false);
-    }//GEN-LAST:event_jButton6ActionPerformed
+    private void HistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HistoryActionPerformed
+         Quizpage page = new Quizpage(category:"History");
+          page.setVisible(true);          
+    }//GEN-LAST:event_HistoryActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-           new programming().setVisible(true);
-           this.setVisible(false);
+    private void GeographyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeographyActionPerformed
+            Quizpage page = new Quizpage(category:"Geography");
+          page.setVisible(true);
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
+    }//GEN-LAST:event_GeographyActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-           new programming().setVisible(true);
-           this.setVisible(false);
+    private void AIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AIActionPerformed
+            Quizpage page = new Quizpage(category:"AI");
+          page.setVisible(true);
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_AIActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-           new programming().setVisible(true);
-           this.setVisible(false);
+    private void OthersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OthersActionPerformed
+           Quizpage page = new Quizpage(category:"Others");
+          page.setVisible(true);
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_OthersActionPerformed
 
     /**
      * @param args the command line arguments
@@ -370,15 +369,15 @@ public class HomePage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton AI;
+    private javax.swing.JButton Geography;
+    private javax.swing.JButton Gk;
+    private javax.swing.JButton Grammar;
+    private javax.swing.JButton History;
+    private javax.swing.JButton Mathematics;
+    private javax.swing.JButton Others;
+    private javax.swing.JButton ProgrammingLanguage;
+    private javax.swing.JButton Science;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
