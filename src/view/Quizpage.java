@@ -194,11 +194,7 @@ public class Quizpage extends javax.swing.JFrame {
     private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
         if(questions == 10 && options ==10){
             timer1.setVisible(false);
-            
-            String correct = String.valueOf(correctAnswer);// remove after testing code
-            Quiz quiz = new Quiz();
-            quiz.setNumberOfCorrectAnswer(correctAnswer);
-            JOptionPane.showMessageDialog(this,correct+"Opening new page","Congrats",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this,"Opening new page","Congrats",JOptionPane.INFORMATION_MESSAGE);
             
         }
         if(questions < 10){
@@ -222,27 +218,6 @@ public class Quizpage extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_skipActionPerformed
 
-    // temporary questions
-    public static String question1(int id){
-        String [] que = {"First", "Second", "Third","Fourth","fifth","sixth","seventh","eight","nine", "ten"};
-        return que[id];
-    }
-    public static String optionss1(int id){
-        String[] option1 = {"Option 1{First}","Option1{Second}","Option1{Third}","Option1{Fourth}","Option 1{First}","Option1{Second}","Option1{Third}","Option1{Fourth}","Option1{Third}","Option1{Fourth}"};
-        return option1[id];
-    }
-    public static String optionss2(int id){
-        String[] option2 = {"Option 2{First}","Option2{Second}","Option2{Third}","Option2{Fourth}","Option 2{First}","Option2{Second}","Option2{Third}","Option2{Fourth}","Option 2{First}","Option2{Second}"};
-        return option2[id];
-    }
-    public static String optionss3(int id){
-        String[] option3 = {"Option 3{First}","Option3{Second}","Option3{Third}","Option3{Fourth}","Option 3{First}","Option3{Second}","Option3{Third}","Option3{Fourth}","Option 3{First}","Option3{Second}"};
-        return option3[id];
-    }
-    public static String optionss4(int id){
-        String[] option4 = {"Option 4{First}","Option4{Second}","Option4{Third}","Option4{Fourth}","Option 4{First}","Option4{Second}","Option4{Third}","Option4{Fourth}","Option 4{First}","Option4{Second}"};
-        return option4[id];
-    }
     //ends here 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
