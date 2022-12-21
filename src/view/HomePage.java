@@ -276,7 +276,7 @@ public class HomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void ProgrammingLanguageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProgrammingLanguageActionPerformed
-           Quizpage page = new Quizpage(category:"ProgrammingLanguage");
+           Quizpage page = new Quizpage("ProgrammingLanguage");
           page.setVisible(true);
            
            
@@ -285,48 +285,48 @@ public class HomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_ProgrammingLanguageActionPerformed
 
     private void ScienceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ScienceActionPerformed
-            Quizpage page = new Quizpage(category:"Science");
+            Quizpage page = new Quizpage("Science");
           page.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_ScienceActionPerformed
 
     private void MathematicsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MathematicsActionPerformed
-           Quizpage page = new Quizpage(category:"Mathematics");
+           Quizpage page = new Quizpage("Mathematics");
           page.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_MathematicsActionPerformed
 
     private void GrammarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GrammarActionPerformed
-            Quizpage page = new Quizpage(category:"Grammar");
+            Quizpage page = new Quizpage("Grammar");
           page.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_GrammarActionPerformed
 
     private void GkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GkActionPerformed
-           Quizpage page = new Quizpage(category:"Gk");
+           Quizpage page = new Quizpage("Gk");
           page.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_GkActionPerformed
 
     private void HistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HistoryActionPerformed
-         Quizpage page = new Quizpage(category:"History");
+         Quizpage page = new Quizpage("History");
           page.setVisible(true);          
     }//GEN-LAST:event_HistoryActionPerformed
 
     private void GeographyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeographyActionPerformed
-            Quizpage page = new Quizpage(category:"Geography");
+            Quizpage page = new Quizpage("Geography");
           page.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_GeographyActionPerformed
 
     private void AIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AIActionPerformed
-            Quizpage page = new Quizpage(category:"AI");
+            Quizpage page = new Quizpage("AI");
           page.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_AIActionPerformed
 
     private void OthersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OthersActionPerformed
-           Quizpage page = new Quizpage(category:"Others");
+           Quizpage page = new Quizpage("Others");
           page.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_OthersActionPerformed
