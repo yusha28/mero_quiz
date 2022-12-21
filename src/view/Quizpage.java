@@ -4,11 +4,14 @@
  */
 package view;
 
+import controller.quiz_Controller;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.util.List;
+import java.util.Random;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
@@ -26,6 +29,9 @@ public class Quizpage extends javax.swing.JFrame {
     public static String answer = "";
     public static int correctAnswer = 0;
     public static String category;
+    public static int selectedNumberFromRandom;
+    public boolean isOptionSelected;
+    public static int randomNum;
     
     public Quizpage() {
         initComponents();
@@ -188,11 +194,7 @@ public class Quizpage extends javax.swing.JFrame {
     private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
         if(questions == 10 && options ==10){
             timer1.setVisible(false);
-            
-            String correct = String.valueOf(correctAnswer);// remove after testing code
-            Quiz quiz = new Quiz();
-            quiz.setNumberOfCorrectAnswer(correctAnswer);
-            JOptionPane.showMessageDialog(this,correct+"Opening new page","Congrats",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this,"Opening new page","Congrats",JOptionPane.INFORMATION_MESSAGE);
             
         }
         if(questions < 10){
@@ -216,27 +218,6 @@ public class Quizpage extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_skipActionPerformed
 
-    // temporary questions
-    public static String question1(int id){
-        String [] que = {"First", "Second", "Third","Fourth","fifth","sixth","seventh","eight","nine", "ten"};
-        return que[id];
-    }
-    public static String optionss1(int id){
-        String[] option1 = {"Option 1{First}","Option1{Second}","Option1{Third}","Option1{Fourth}","Option 1{First}","Option1{Second}","Option1{Third}","Option1{Fourth}","Option1{Third}","Option1{Fourth}"};
-        return option1[id];
-    }
-    public static String optionss2(int id){
-        String[] option2 = {"Option 2{First}","Option2{Second}","Option2{Third}","Option2{Fourth}","Option 2{First}","Option2{Second}","Option2{Third}","Option2{Fourth}","Option 2{First}","Option2{Second}"};
-        return option2[id];
-    }
-    public static String optionss3(int id){
-        String[] option3 = {"Option 3{First}","Option3{Second}","Option3{Third}","Option3{Fourth}","Option 3{First}","Option3{Second}","Option3{Third}","Option3{Fourth}","Option 3{First}","Option3{Second}"};
-        return option3[id];
-    }
-    public static String optionss4(int id){
-        String[] option4 = {"Option 4{First}","Option4{Second}","Option4{Third}","Option4{Fourth}","Option 4{First}","Option4{Second}","Option4{Third}","Option4{Fourth}","Option 4{First}","Option4{Second}"};
-        return option4[id];
-    }
     //ends here 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -414,6 +395,8 @@ public class Quizpage extends javax.swing.JFrame {
         Quiz q;
         quiz_Controller controller = new quiz_Controller();
         Quiz quiz =  new Quiz(); 
+        
+        // use id and fetch data
         if(questions == 10 && options ==10){
             timer.stop();
             questions = 9;
@@ -433,12 +416,24 @@ public class Quizpage extends javax.swing.JFrame {
         }
         sec = 20;
         timer1.setVisible(true);
-        Questions.setText(question1(questions));
-        option1.setText(optionss1(options));
-        option2.setText(optionss2(options));
-        option3.setText(optionss3(options));
-        option4.setText(optionss4(options));
-        count.setText(String.valueOf(questionCount));
+       
+        try{
+            System.out.println("Category: "+category);
+            List<Quiz> quizList = controller.m("programmingLanguage");
+            Random ran = new Random();
+            int index = ran.nextInt(0,2);// correct this code...........................................................................
+            q = quizList.get(index);
+            Questions.setText(q.getQuestion());
+            option1.setText(q.getOption1());
+            option2.setText(q.getOption2());
+            option3.setText(q.getOption3());
+            option4.setText(q.getOption4());
+            count.setText(String.valueOf(questionCount));
+        }
+        catch(Exception e){
+            
+        }
+        
         questions++;
         options++;
         questionCount++;
