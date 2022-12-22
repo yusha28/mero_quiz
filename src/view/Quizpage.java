@@ -211,17 +211,16 @@ public class Quizpage extends javax.swing.JFrame {
     }//GEN-LAST:event_nextActionPerformed
 
     private void skipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skipActionPerformed
-
-        if(questions == 10 && options ==10){
-            timer1.setVisible(false);
-            String correct = String.valueOf(correctAnswer);// remove after testing code
-            JOptionPane.showMessageDialog(this,correct+" Opening new page","Congrats",JOptionPane.INFORMATION_MESSAGE);
-            Quiz quiz = new Quiz();
-            quiz.setNumberOfCorrectAnswer(correctAnswer);
-//            skip.setVisible(false);
+//
+         if(questions < 10){
+            performNext();
+            option1.setEnabled(true);
+            option2.setEnabled(true);
+            option3.setEnabled(true);
+            option4.setEnabled(true);
         }
-        if(questions < 10){
-        performNext();
+        if(questions == 10 && options ==10){
+            skip.setVisible(true);
         }
     }//GEN-LAST:event_skipActionPerformed
 
