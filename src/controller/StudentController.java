@@ -40,6 +40,34 @@ public class StudentController{
         return result;
 
     }
+      public void changePassword(String pNum,String oldPass,String newPass){
+      connection = new DbConnection();
+      String selectQuery = String.format("Select * from registration where PhoneNumber = '%s'",pNum);
+      ResultSet result = connection.retrieve(selectQuery);
+      
+      
+      try{
+          while(result.next()){
+              String prevPass = result.getString("pass");
+              if(prevPass.equals(oldPass)){
+                  String updateQuery = String.format("update registration set pass='%s' where PhoneNumber='%s'",
+              newPass,
+              pNum);
+                  connection.manipulate(updateQuery);
+              }
+          }
+      }catch(SQLException e){
+          e.printStackTrace();
+      }
+      
+      }
+      public void resetpassword(String pNum,String newpassword) {
+      connection = new DbConnection();
+      String selectQuery = String.format("Update registration set Password = '%s' where PhoneNumber='%s'",newpassword,pNum);
+     
+      int result = connection.manipulate(selectQuery);
+      
+      }
 }
 
 //    public int updateStudent(Student student){
