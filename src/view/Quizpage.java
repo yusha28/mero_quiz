@@ -74,6 +74,11 @@ public class Quizpage extends javax.swing.JFrame {
         jTextField4.setText("Please choose one of the following answer.");
 
         option1.setText("6");
+        option1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                option1ActionPerformed(evt);
+            }
+        });
 
         option2.setText("7");
 
@@ -223,6 +228,18 @@ public class Quizpage extends javax.swing.JFrame {
             skip.setVisible(true);
         }
     }//GEN-LAST:event_skipActionPerformed
+
+    private void option1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_option1ActionPerformed
+        // TODO add your handling code here:
+        System.out.println("Category:"+" Red"); // this is correct to use
+        answer = option1.getText();
+        correctAnswer(answer);
+        isOptionSelected = true;
+        option1.setEnabled(false);
+        option2.setEnabled(false);
+        option3.setEnabled(false);
+        option4.setEnabled(false);
+    }//GEN-LAST:event_option1ActionPerformed
 
     //ends here 
     public static void main(String args[]) {
