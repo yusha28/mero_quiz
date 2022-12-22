@@ -121,11 +121,6 @@
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnsetting">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\acer\Pictures\1669921793034_Group 1group1fifty not60.png"/>
-        </Property>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnsettingActionPerformed"/>
       </Events>

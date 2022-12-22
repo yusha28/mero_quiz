@@ -196,7 +196,7 @@ y.setVisible(true);// TODO add your handling code here:
             if(retrieveStudent.next()){
                 
                 this.dispose();
-              HomePage user1=new HomePage();
+              Mainframe user1=new Mainframe();
               user1.setVisible(true);
                       
            }

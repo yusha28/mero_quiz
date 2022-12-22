@@ -26,25 +26,18 @@ public class DbConnection {
 
             String username = "root";
 
-<<<<<<< HEAD
+
             String password = "sonu@2002";
-=======
-            String password = "Yusha@123";
->>>>>>> starbucks
+
 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             connection  = DriverManager.getConnection(
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    "jdbc:mysql://localhost:3306/sonu1",username,password);
-=======
-                    "jdbc:mysql://localhost:3306/Quiz",username,password);
->>>>>>> starbucks
-=======
+
+
+
                     "jdbc:mysql://localhost:3306/sonu1","root","sonu@2002");
->>>>>>> sonuDB
 
 
 
