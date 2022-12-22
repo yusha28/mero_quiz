@@ -273,7 +273,13 @@ public class Quizpage extends javax.swing.JFrame {
     }//GEN-LAST:event_option3ActionPerformed
 
     private void option4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_option4ActionPerformed
-        
+        answer = option4.getText();
+        correctAnswer(answer);
+        isOptionSelected = true;
+        option1.setEnabled(false);
+        option2.setEnabled(false);
+        option3.setEnabled(false);
+        option4.setEnabled(false);
     }//GEN-LAST:event_option4ActionPerformed
  
     public static void main(String args[]) {
