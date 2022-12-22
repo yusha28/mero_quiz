@@ -515,23 +515,40 @@ public class Quizpage extends javax.swing.JFrame {
         timer1.setVisible(true);
        
         try{
+            op1.setBackground(Color.white);
+            op2.setBackground(Color.white);
+            op3.setBackground(Color.white);
+            op4.setBackground(Color.white);
+            option1.setSelected(false);
+            option2.setSelected(false);
+            option3.setSelected(false);
+            option4.setSelected(false);
             System.out.println("Category: "+category);
             List<Quiz> quizList = controller.m("programmingLanguage");
-            Random ran = new Random();
-            int index = ran.nextInt(0,2);// correct this code...........................................................................
-            q = quizList.get(index);
+//            Random ran = new Random();
+//            int index = ran.nextInt(0,4);// correct this code...........................................................................
+//            selectedNumberFromRandom = index;
+             selectedNumberFromRandom = questions;
+//            q = quizList.get(index);
+            q = quizList.get(questions);
             Questions.setText(q.getQuestion());
             option1.setText(q.getOption1());
             option2.setText(q.getOption2());
             option3.setText(q.getOption3());
             option4.setText(q.getOption4());
             count.setText(String.valueOf(questionCount));
+           if(randomNum == 1){
+                questions--;
+            }
+            else{
+                questions++;
+            }
         }
         catch(Exception e){
             
         }
         
-        questions++;
+//        questions++;
         options++;
         questionCount++;
         
