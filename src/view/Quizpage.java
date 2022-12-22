@@ -305,46 +305,48 @@ public class Quizpage extends javax.swing.JFrame {
             public void run() {
                 new Quizpage().setVisible(true);
                 
-                if(questionCount == 10){
-                    
+                randomIndex();
+                if(randomNum == 1){
+                questions = 15;
                 }
-                timer = new Timer(1000, new ActionListener(){
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        
-                        if(sec >=0){  
-                        timer1.setText(String.valueOf(sec));
-                        sec--;
-                        }
-                        else{
-//                            questionCount++;
-                            sec = 20;
-                            performNext();
-                            
-                        }
-                        
-                    }
-                    
-                });
-                
-                
-                
-                if(sec >= 0){
-                     performNext();// check here
-                     timer.stop();
-                     sec = 20;
-                }
-                
-                
-                timer.start();
-                // calling the methods
-                onAnswerSelected();
-                isCorrectAnswer();
-               
-                                
-           }
-        });
-        
+                timerM();
+//                timer = new Timer(1000, new ActionListener(){
+//                    @Override
+//                    public void actionPerformed(ActionEvent e) {
+//                        
+//                        if(sec >=0){  
+//                        timer1.setText(String.valueOf(sec));
+//                        sec--;
+//                        }
+//                        else{
+////                            questionCount++;
+//                            sec = 20;
+//                            performNext();
+//                            
+//                        }
+//                        
+//                    }
+//                    
+//                });
+//                
+//                
+//                
+//                if(sec >= 0){
+//                     performNext();// check here
+//                     timer.stop();
+//                     sec = 20;
+//                }
+//                
+//                
+//                timer.start();
+//                // calling the methods
+//                onAnswerSelected();
+//                isCorrectAnswer();
+//               
+//                                
+//           }
+//        });
+//        
     }
     public static void timerM(){
         timer = new Timer(1000, new ActionListener(){
