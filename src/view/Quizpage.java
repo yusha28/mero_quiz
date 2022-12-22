@@ -350,10 +350,11 @@ public class Quizpage extends javax.swing.JFrame {
 //                isCorrectAnswer();
 //               
 //                                
-//           }
-//        });
+           }
+        });
 //        
-    }
+        }
+               
     public static void timerM(){
         timer = new Timer(1000, new ActionListener(){
                     @Override
