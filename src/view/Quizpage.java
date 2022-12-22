@@ -91,6 +91,11 @@ public class Quizpage extends javax.swing.JFrame {
         });
 
         option4.setText("9");
+        option4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                option4ActionPerformed(evt);
+            }
+        });
 
         skip.setText("Skip");
         skip.addActionListener(new java.awt.event.ActionListener() {
@@ -266,6 +271,10 @@ public class Quizpage extends javax.swing.JFrame {
         option3.setEnabled(false);
         option4.setEnabled(false);
     }//GEN-LAST:event_option3ActionPerformed
+
+    private void option4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_option4ActionPerformed
+        
+    }//GEN-LAST:event_option4ActionPerformed
  
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -336,6 +345,26 @@ public class Quizpage extends javax.swing.JFrame {
            }
         });
         
+    }
+    public static void timerM(){
+        timer = new Timer(1000, new ActionListener(){
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        
+                        if(sec >=0){  
+                        timer1.setText(String.valueOf(sec));
+                        sec--;
+                        }
+                        else{
+//                            questionCount++;
+                            sec = 20;
+                            performNext();
+                            
+                        }
+                        
+                    }
+                    
+                });
     }
     public static void onAnswerSelected(){
         option1.addItemListener(new ItemListener(){
