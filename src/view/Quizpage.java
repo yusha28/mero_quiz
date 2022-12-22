@@ -440,34 +440,54 @@ public class Quizpage extends javax.swing.JFrame {
         return false;
     }
     
-    public static void correctAnswer(){
+    public static void correctAnswer(String answer){
+        try{
+        Quiz q;
         Quiz quiz = new Quiz();
-        if(option1.getText().equals(quiz.getRightAnswer())){
-            option1.setBackground(Color.green);
+        quiz_Controller controller = new quiz_Controller();
+          List<Quiz> quizList = controller.m("programmingLanguage");
+//            Random ran = new Random();
+//            int index = ran.nextInt(0,2);// correct this code...........................................................................
+            q = quizList.get(selectedNumberFromRandom);
+            System.out.println("Selected Answer :"+ answer);
+//            System.out.println("RightAnswer: "+q.getRightAnswer()+" "+option1.getText());
+        if(option1.getText().equals(q.getRightAnswer())){
+           op1.setBackground(Color.green);
+            
         }
         else{
-            option1.setBackground(Color.red);
+            op1.setBackground(Color.red);
         }
-        if(option2.getText().equals(quiz.getRightAnswer())){
-            option2.setBackground(Color.green);
-        }
-        else{
-            option2.setBackground(Color.red);
-        }
-        if(option3.getText().equals(quiz.getRightAnswer())){
-            option3.setBackground(Color.green);
+        if(option2.getText().equals(q.getRightAnswer())){
+            op2.setBackground(Color.green);
         }
         else{
-            option3.setBackground(Color.red);
+            op2.setBackground(Color.red);
         }
-        if(option4.getText().equals(quiz.getRightAnswer())){
-            option4.setBackground(Color.green);
+        if(option3.getText().equals(q.getRightAnswer())){
+            op3.setBackground(Color.green);
         }
         else{
-            option4.setBackground(Color.red);
+            op3.setBackground(Color.red); 
         }
+        if(option4.getText().equals(q.getRightAnswer())){
+            op4.setBackground(Color.green);
+        }
+        else{
+            op4.setBackground(Color.red);
+        }
+        
+        if(answer.equals(q.getRightAnswer())){
+            correctAnswer++;
+           }
+            
+        }
+        catch(Exception e){
+            System.out.println("Exception occur in correctAnswer "+ e);
+            
+        }
+        
     }
-    
     public static void performNext(){
         Quiz q;
         quiz_Controller controller = new quiz_Controller();
