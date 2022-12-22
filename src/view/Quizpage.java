@@ -84,6 +84,11 @@ public class Quizpage extends javax.swing.JFrame {
         });
 
         option3.setText("8");
+        option3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                option3ActionPerformed(evt);
+            }
+        });
 
         option4.setText("9");
 
@@ -251,6 +256,16 @@ public class Quizpage extends javax.swing.JFrame {
         option3.setEnabled(false);
         option4.setEnabled(false);
     }//GEN-LAST:event_option2ActionPerformed
+
+    private void option3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_option3ActionPerformed
+        answer = option3.getText();
+        correctAnswer(answer);
+        isOptionSelected = true;
+        option1.setEnabled(false);
+        option2.setEnabled(false);
+        option3.setEnabled(false);
+        option4.setEnabled(false);
+    }//GEN-LAST:event_option3ActionPerformed
  
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
