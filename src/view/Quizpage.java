@@ -15,10 +15,6 @@ import java.util.Random;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
-/**
- *
- * @author Acer
- */
 public class Quizpage extends javax.swing.JFrame {
         
     public static int questions = 0;
@@ -81,6 +77,11 @@ public class Quizpage extends javax.swing.JFrame {
         });
 
         option2.setText("7");
+        option2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                option2ActionPerformed(evt);
+            }
+        });
 
         option3.setText("8");
 
@@ -241,7 +242,16 @@ public class Quizpage extends javax.swing.JFrame {
         option4.setEnabled(false);
     }//GEN-LAST:event_option1ActionPerformed
 
-    //ends here 
+    private void option2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_option2ActionPerformed
+        answer = option2.getText();
+        correctAnswer(answer);
+        isOptionSelected = true;
+        option1.setEnabled(false);
+        option2.setEnabled(false);
+        option3.setEnabled(false);
+        option4.setEnabled(false);
+    }//GEN-LAST:event_option2ActionPerformed
+ 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
