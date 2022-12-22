@@ -553,6 +553,12 @@ public class Quizpage extends javax.swing.JFrame {
         questionCount++;
         
     }
+    public static void randomIndex(){
+        Random ran = new Random();
+        int index = ran.nextInt(0,2);
+        System.out.println(index);
+        randomNum = index;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JTextField Questions;
