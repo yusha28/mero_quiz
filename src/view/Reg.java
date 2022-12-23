@@ -259,14 +259,24 @@ public class Reg extends javax.swing.JFrame {
     }//GEN-LAST:event_loginActionPerformed
 //database connection
     private void createaccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createaccountActionPerformed
+if(firstname.getText().equals("")&&lastname.getText().equals("")&&phonenumber.getText().equals("")&&email.getText().equals("")&&password.getText().equals("")&&confirmpassword.getText().equals("")){
+    
+JOptionPane.showMessageDialog(null, 
+                              "User Must Fill All The Details", 
+                              "WARNING", 
+                              JOptionPane.WARNING_MESSAGE);
+
+}
 if(confirmpassword.getText().equals(password.getText())){
-        if(tick.isSelected()){
+       if(tick.isSelected()){
     Student s1 = new Student(firstname.getText(),lastname.getText(),phonenumber.getText(),email.getText(),password.getText());
     StudentController sc = new StudentController();
     int insertedStudent = sc.insertStudent(s1);
     if(insertedStudent>0){
         System.out.println("Student inserted");
          JOptionPane.showMessageDialog(this,"Registered");
+          login yr=new login();
+        yr.setVisible(true); 
     }
     else{
         System.out.println("Not inserted");
@@ -279,8 +289,13 @@ if(confirmpassword.getText().equals(password.getText())){
                               "WARNING", 
                               JOptionPane.WARNING_MESSAGE);
 }
-   login yr=new login();
-        yr.setVisible(true);  
+
+//JOptionPane.showMessageDialog(null, 
+//                              "User Must Fill All The Details", 
+//                              "WARNING", 
+//                              JOptionPane.WARNING_MESSAGE);
+
+   
         // TODO add your handling code here:
     }//GEN-LAST:event_createaccountActionPerformed
 
