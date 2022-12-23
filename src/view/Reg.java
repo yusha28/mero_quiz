@@ -258,6 +258,7 @@ public class Reg extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_loginActionPerformed
 //database connection
+    // if else condition
     private void createaccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createaccountActionPerformed
 if(firstname.getText().equals("")&&lastname.getText().equals("")&&phonenumber.getText().equals("")&&email.getText().equals("")&&password.getText().equals("")&&confirmpassword.getText().equals("")){
     
