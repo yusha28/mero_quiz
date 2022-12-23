@@ -102,7 +102,7 @@ public class Forget extends javax.swing.JFrame {
              if(validStudent.next()){
                 
                 this.dispose();
-                Reset res =new Reset();
+                Reset res =new Reset(number2);
                 res.setVisible(true);
             }
             else{
