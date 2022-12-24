@@ -207,7 +207,7 @@ y.setVisible(true);// TODO add your handling code here:
         
         try {
             if(retrieveStudent.next()){
-                
+//              String name = retrieveStudent.
                 this.dispose();
               Mainframe user1=new Mainframe();
               user1.setVisible(true);
