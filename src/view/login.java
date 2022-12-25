@@ -65,6 +65,15 @@ public class login extends javax.swing.JFrame {
         jLabel3.setText("Login to continue");
 
         email.setText("username123@gmail.com");
+        email.setToolTipText("");
+        email.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                emailFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                emailFocusLost(evt);
+            }
+        });
         email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailActionPerformed(evt);
@@ -173,11 +182,12 @@ public class login extends javax.swing.JFrame {
 //reg page
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 Reg y=new Reg  ();
-y.setVisible(true);// TODO add your handling code here:
+y.setVisible(true);
+this.dispose();// TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_emailActionPerformed
 
     private void passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passActionPerformed
@@ -188,42 +198,92 @@ y.setVisible(true);// TODO add your handling code here:
         
 
 
-
-
-        String pnum= email.getText();
-        String pas = pass.getText();
-        
-        if (pnum.isEmpty()||pas.isEmpty()){
-            //Error dekhaune
-            JOptionPane.showMessageDialog(this,"All Fields are required.","value error",JOptionPane.ERROR_MESSAGE);
-        } else {
-              StudentController tc = new StudentController();
-        ResultSet retrieveStudent = tc.retrieveStudent(pnum,pas);
-
-          if(pnum.equals("") && pas.equals("")){
-             JOptionPane.showMessageDialog(null,"Email and password field cannot be empty");
+String Email = email.getText();
+        String Pass=pass.getText();
+        if (email.getText().equals("")&&pass.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"fill the details","warning",JOptionPane.PLAIN_MESSAGE);
         }
-        
-        
-        try {
-            if(retrieveStudent.next()){
-//              String name = retrieveStudent.
-                this.dispose();
-              Mainframe user1=new Mainframe();
-              user1.setVisible(true);
-                      
-           }
-            
-            else{
-             JOptionPane.showMessageDialog(null,"Please enter valid email or password.");
-            }
-         } catch (Exception ex) {
-             Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
-         }
-
-
-
+        else{
+        DbConnection db= new DbConnection();
+        String querry=String.format("Select * from registration where Email='%s'", Email);
+        ResultSet result=db.retrieve(querry);
+        try{
+          while(result.next()){
+              String DbEmail= result.getString("Email");
+              String DbPass=result.getString("Password");
+              
+              System.out.println(DbEmail);
+              System.out.println(DbPass);
+              if(Pass.equals(DbPass) && Email.equals(DbEmail)){
+                  
+                  
+                  
+                JOptionPane.showMessageDialog(this,"logged in sucessfully","logged in",JOptionPane.PLAIN_MESSAGE);
+                  System.out.println("logged in");
+//                  Student student = new Student();
+                  
+                  
+                  
+                    Mainframe das = new Mainframe(result.getString("FirstName"),result.getString("LastName"),result.getString("Email"),result.getString("PhoneNumber"),result.getInt("clientid"));
+                   das.main();
+                    das.setVisible(true);
+                    this.setVisible(false);
+                    
+                    System.out.println(result.getString("username"));      
+              }
+          else{
+                  if (email.getText().equals("")) {
+            JOptionPane.showMessageDialog(null,"Please fill out required details");
         }
+        else if(pass.getText().equals("")){
+            JOptionPane.showMessageDialog(null,"Please fill out required details");
+        } 
+        else{
+            JOptionPane.showMessageDialog(null,"Wrong email or password!!","Message",JOptionPane.ERROR_MESSAGE);
+        }
+                  }
+          }
+      }catch (SQLException e){
+          
+//          e.printStackTrace();
+      }
+    }
+    
+
+//        String pnum= email.getText();
+//        String pas = pass.getText();
+        
+//        if (pnum.isEmpty()||pas.isEmpty()){
+//            //Error dekhaune
+//            JOptionPane.showMessageDialog(this,"All Fields are required.","value error",JOptionPane.ERROR_MESSAGE);
+//        } else {
+//              StudentController tc = new StudentController();
+//        ResultSet retrieveStudent = tc.retrieveStudent(pnum,pas);
+//
+//          if(pnum.equals("") && pas.equals("")){
+//             JOptionPane.showMessageDialog(null,"Email and password field cannot be empty");
+//        }
+//        
+//        
+//        try {
+//            if(retrieveStudent.next()){
+////              String name = retrieveStudent.
+//                this.dispose();
+//              Mainframe user1=new Mainframe();
+//              user1.setVisible(true);
+//                      
+//           }
+//            
+//            else{
+//             JOptionPane.showMessageDialog(null,"Please enter valid email or password.");
+//            }
+//         } catch (Exception ex) {
+//             Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+//         }
+//
+//
+//
+//        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -231,6 +291,14 @@ Forget ss= new Forget();
 ss.setVisible(true);
 this.dispose();// TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void emailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailFocusLost
+
+    private void emailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailFocusGained
 
     /**
      * @param args the command line arguments
