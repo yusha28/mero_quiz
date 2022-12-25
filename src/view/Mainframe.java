@@ -85,6 +85,15 @@ public class Mainframe extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
+=======
+        btnsetting.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsettingActionPerformed(evt);
+            }
+        });
+
+>>>>>>> sonuDB
         exitexit.setText("Exit");
         exitexit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,6 +191,7 @@ mainpannel.add(internalFrame);
     }//GEN-LAST:event_btnscoreboardActionPerformed
 
     private void btnhomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnhomeActionPerformed
+<<<<<<< HEAD
        HomePage t = new HomePage();
 JInternalFrame internalFrame = new JInternalFrame();
 internalFrame.setContentPane(t.getContentPane());
@@ -199,6 +209,13 @@ mainpannel.add(internalFrame);
 //mainpannel.add (main);
 //        main.setVisible(true);
 //        this.dispose();
+=======
+
+
+        HomePage main = new HomePage();    
+        main.setVisible(fale);
+        this.dispose();
+>>>>>>> sonuDB
 //        desktopPaneControl.removeAll();
 //        Frame1 f1=new Frame1(); //JInternalFrame object
 //        desktopPaneControl.add(f1).setVisible(true);
