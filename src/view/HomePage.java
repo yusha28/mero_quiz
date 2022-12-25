@@ -282,7 +282,7 @@ public class HomePage extends javax.swing.JFrame {
         
         // TODO add your handling code here:
     }//GEN-LAST:event_ProgrammingLanguageActionPerformed
-
+// quiz page made visible
     private void ScienceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ScienceActionPerformed
             Quizpage page = new Quizpage("Science");
           page.setVisible(true);
