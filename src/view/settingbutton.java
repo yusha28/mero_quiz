@@ -4,8 +4,8 @@
  */
 package view;
 
-import Mainframe;
-import Mainframe;
+//import Mainframe;
+//import Mainframe;
 import javax.swing.JOptionPane;
 
 /**
@@ -31,12 +31,12 @@ public class settingbutton extends javax.swing.JFrame {
     private void initComponents() {
 
         DesktopPaneControl = new javax.swing.JDesktopPane();
-        setingpage = new javax.swing.JPanel();
         BTNHOME = new javax.swing.JButton();
         BTNPROFILE = new javax.swing.JButton();
         BTNSCOREBOARD = new javax.swing.JButton();
         exit = new javax.swing.JButton();
-        BTNSETTING = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("mainformm");
@@ -44,30 +44,15 @@ public class settingbutton extends javax.swing.JFrame {
         DesktopPaneControl.setBackground(new java.awt.Color(0, 0, 0));
         DesktopPaneControl.setForeground(new java.awt.Color(255, 255, 255));
 
-        setingpage.setBackground(new java.awt.Color(204, 204, 204));
-
-        javax.swing.GroupLayout setingpageLayout = new javax.swing.GroupLayout(setingpage);
-        setingpage.setLayout(setingpageLayout);
-        setingpageLayout.setHorizontalGroup(
-            setingpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 749, Short.MAX_VALUE)
-        );
-        setingpageLayout.setVerticalGroup(
-            setingpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 475, Short.MAX_VALUE)
-        );
-
-        DesktopPaneControl.setLayer(setingpage, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
         javax.swing.GroupLayout DesktopPaneControlLayout = new javax.swing.GroupLayout(DesktopPaneControl);
         DesktopPaneControl.setLayout(DesktopPaneControlLayout);
         DesktopPaneControlLayout.setHorizontalGroup(
             DesktopPaneControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(setingpage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 761, Short.MAX_VALUE)
         );
         DesktopPaneControlLayout.setVerticalGroup(
             DesktopPaneControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(setingpage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 475, Short.MAX_VALUE)
         );
 
         BTNHOME.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -102,10 +87,17 @@ public class settingbutton extends javax.swing.JFrame {
             }
         });
 
-        BTNSETTING.setIcon(new javax.swing.ImageIcon("C:\\Users\\acer\\Pictures\\1669921793034_Group 1group1fifty not60.png")); // NOI18N
-        BTNSETTING.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BTNSETTINGActionPerformed(evt);
+        jLabel1.setText("Update Password");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+
+        jLabel2.setText("Delete Account");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
             }
         });
 
@@ -120,11 +112,13 @@ public class settingbutton extends javax.swing.JFrame {
                         .addComponent(BTNSCOREBOARD, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(BTNPROFILE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(BTNSETTING))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(15, 15, 15)
-                        .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(DesktopPaneControl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -140,7 +134,9 @@ public class settingbutton extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(BTNSETTING)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -153,9 +149,15 @@ public class settingbutton extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BTNHOMEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNHOMEActionPerformed
-        HomePage main = new HomePage();    
-        main.setVisible(true);
-        this.dispose();
+        DesktopPaneControl.removeAll();
+        HomePage h1=new HomePage();//JInternalFrame Object
+        DesktopPaneControl.add(h1).setVisible(true);
+
+
+
+//        HomePage main = new HomePage();    
+//        main.setVisible(true);
+//        this.dispose();
     }//GEN-LAST:event_BTNHOMEActionPerformed
 
     private void BTNSCOREBOARDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNSCOREBOARDActionPerformed
@@ -165,10 +167,6 @@ public class settingbutton extends javax.swing.JFrame {
     private void BTNPROFILEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNPROFILEActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BTNPROFILEActionPerformed
-
-    private void BTNSETTINGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNSETTINGActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BTNSETTINGActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
           int response= JOptionPane.showConfirmDialog(this, "Do you want to exit?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
@@ -185,6 +183,14 @@ public class settingbutton extends javax.swing.JFrame {
 
             } 
     }//GEN-LAST:event_exitActionPerformed
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -217,6 +223,7 @@ public class settingbutton extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new settingbutton().setVisible(true);
+               
             }
         });
     }
@@ -225,9 +232,9 @@ public class settingbutton extends javax.swing.JFrame {
     private javax.swing.JButton BTNHOME;
     private javax.swing.JButton BTNPROFILE;
     private javax.swing.JButton BTNSCOREBOARD;
-    private javax.swing.JButton BTNSETTING;
-    private javax.swing.JDesktopPane DesktopPaneControl;
+    public static javax.swing.JDesktopPane DesktopPaneControl;
     private javax.swing.JButton exit;
-    private javax.swing.JPanel setingpage;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
