@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Lenovo/OneDrive/Desktop/momo/mero_quiz/src/view/profile.java</file>
             <file>file:/C:/Users/Lenovo/OneDrive/Desktop/momo/mero_quiz/src/view/Mainframe.java</file>
             <file>file:/C:/Users/Lenovo/OneDrive/Desktop/momo/mero_quiz/src/view/Edit_Profile.java</file>
@@ -16,6 +17,22 @@
             <file>file:/C:/Users/Lenovo/OneDrive/Desktop/momo/mero_quiz/src/view/login.java</file>
             <file>file:/C:/Users/Lenovo/OneDrive/Desktop/momo/mero_quiz/src/view/Quiz.java</file>
             <file>file:/C:/Users/Lenovo/OneDrive/Desktop/momo/mero_quiz/src/view/Reg.java</file>
+=======
+            <file>file:/C:/Users/Acer/Desktop/New_Quiz/mero_quiz/src/view/Mainframe.java</file>
+            <file>file:/C:/Users/Acer/Desktop/New_Quiz/mero_quiz/src/view/login.java</file>
+            <file>file:/C:/Users/Acer/Desktop/New_Quiz/mero_quiz/src/view/Reset.java</file>
+            <file>file:/C:/Users/Acer/Desktop/New_Quiz/mero_quiz/src/view/Reg.java</file>
+            <file>file:/C:/Users/Acer/Desktop/New_Quiz/mero_quiz/src/controller/StudentController.java</file>
+            <file>file:/C:/Users/Acer/Desktop/New_Quiz/mero_quiz/src/view/settingbutton.java</file>
+            <file>file:/C:/Users/Acer/Desktop/New_Quiz/mero_quiz/src/view/Quizpage.java</file>
+            <file>file:/C:/Users/Acer/Desktop/New_Quiz/mero_quiz/src/view/HomePage.java</file>
+            <file>file:/C:/Users/Acer/Desktop/New_Quiz/mero_quiz/src/database/DbConnection.java</file>
+            <file>file:/C:/Users/Acer/Desktop/New_Quiz/mero_quiz/src/view/Edit_Profile.java</file>
+            <file>file:/C:/Users/Acer/Desktop/New_Quiz/mero_quiz/src/view/profile.java</file>
+            <file>file:/C:/Users/Acer/Desktop/New_Quiz/mero_quiz/src/view/Forget.java</file>
+            <file>file:/C:/Users/Acer/Desktop/New_Quiz/mero_quiz/src/controller/quiz_Controller.java</file>
+            <file>file:/C:/Users/Acer/Desktop/New_Quiz/mero_quiz/src/model/Student.java</file>
+>>>>>>> sonuDB
         </group>
     </open-files>
 </project-private>
