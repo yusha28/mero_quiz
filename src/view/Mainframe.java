@@ -79,7 +79,6 @@ public class Mainframe extends javax.swing.JFrame {
             }
         });
 
-        btnsetting.setIcon(new javax.swing.ImageIcon("C:\\Users\\acer\\Pictures\\1669921793034_Group 1group1fifty not60.png")); // NOI18N
         btnsetting.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnsettingActionPerformed(evt);
@@ -159,8 +158,10 @@ public class Mainframe extends javax.swing.JFrame {
     }//GEN-LAST:event_btnsettingActionPerformed
 
     private void btnhomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnhomeActionPerformed
+
+
         HomePage main = new HomePage();    
-        main.setVisible(true);
+        main.setVisible(fale);
         this.dispose();
 //        desktopPaneControl.removeAll();
 //        Frame1 f1=new Frame1(); //JInternalFrame object
