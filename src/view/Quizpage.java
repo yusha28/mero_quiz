@@ -56,6 +56,10 @@ public class Quizpage extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         count = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        op1 = new javax.swing.JPanel();
+        op2 = new javax.swing.JPanel();
+        op3 = new javax.swing.JPanel();
+        op4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -119,6 +123,50 @@ public class Quizpage extends javax.swing.JFrame {
 
         jLabel3.setText("of 10");
 
+        javax.swing.GroupLayout op1Layout = new javax.swing.GroupLayout(op1);
+        op1.setLayout(op1Layout);
+        op1Layout.setHorizontalGroup(
+            op1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        op1Layout.setVerticalGroup(
+            op1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 23, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout op2Layout = new javax.swing.GroupLayout(op2);
+        op2.setLayout(op2Layout);
+        op2Layout.setHorizontalGroup(
+            op2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        op2Layout.setVerticalGroup(
+            op2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout op3Layout = new javax.swing.GroupLayout(op3);
+        op3.setLayout(op3Layout);
+        op3Layout.setHorizontalGroup(
+            op3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        op3Layout.setVerticalGroup(
+            op3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 19, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout op4Layout = new javax.swing.GroupLayout(op4);
+        op4.setLayout(op4Layout);
+        op4Layout.setHorizontalGroup(
+            op4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+        op4Layout.setVerticalGroup(
+            op4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 23, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -128,11 +176,19 @@ public class Quizpage extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(70, 70, 70)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(option1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(option2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(option3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(option4, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(option1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(option4, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(option2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(option3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(37, 37, 37)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(op2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(op1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(op3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(op4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(49, 49, 49)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,15 +226,25 @@ public class Quizpage extends javax.swing.JFrame {
                 .addComponent(Questions, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(option1)
-                .addGap(18, 18, 18)
-                .addComponent(option2)
-                .addGap(18, 18, 18)
-                .addComponent(option3)
-                .addGap(18, 18, 18)
-                .addComponent(option4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addGap(20, 20, 20)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(option1)
+                    .addComponent(op1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(option2)
+                        .addGap(18, 18, 18)
+                        .addComponent(option3)
+                        .addGap(18, 18, 18)
+                        .addComponent(option4))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(op2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(op3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(op4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(44, 44, 44)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(skip)
                     .addComponent(next))
@@ -375,72 +441,72 @@ public class Quizpage extends javax.swing.JFrame {
                     
                 });
     }
-    public static void onAnswerSelected(){
-        option1.addItemListener(new ItemListener(){
-                    @Override
-                    public void itemStateChanged(ItemEvent e) {
-                        if(e.getStateChange()==1){
-                            answer = option1.getText();
-                            if(isCorrectAnswer()){
-                                option1.setBackground(Color.green);//This code can be removed because correctAnswer is better.
-                            }
-                            else{
-                                option1.setBackground(Color.red);
-                            }
-                             correctAnswer();
-                        }
-                    }
-                
-                });
-        option2.addItemListener(new ItemListener(){
-                    @Override
-                    public void itemStateChanged(ItemEvent e) {
-                        if(e.getStateChange()==1){
-                            answer = option2.getText();
-                        }
-                        if(isCorrectAnswer()){
-                                option2.setBackground(Color.green);//This code can be removed because correctAnswer is better.
-                            }
-                            else{
-                                option2.setBackground(Color.red);
-                            }
-                        correctAnswer();
-                    }
-                
-                });
-        option3.addItemListener(new ItemListener(){
-                    @Override
-                    public void itemStateChanged(ItemEvent e) {
-                        if(e.getStateChange()==1){
-                            answer = option3.getText();
-                        }
-                        if(isCorrectAnswer()){
-                                option3.setBackground(Color.green);//This code can be removed because correctAnswer is better.
-                            }
-                            else{
-                                option3.setBackground(Color.red);
-                            }
-                         correctAnswer();
-                    }
-                
-                });
-        option4.addItemListener(new ItemListener(){
-                    @Override
-                    public void itemStateChanged(ItemEvent e) {
-                        if(e.getStateChange()==1){
-                            answer = option4.getText();
-                        }
-                        if(isCorrectAnswer()){
-                                option4.setBackground(Color.green); //This code can be removed because correctAnswer is better.
-                            }
-                            else{
-                                option4.setBackground(Color.red);
-                            }
-                         correctAnswer();
-                    }
-                
-                });
-    }
+//    public static void onAnswerSelected(){
+//        option1.addItemListener(new ItemListener(){
+//                    @Override
+//                    public void itemStateChanged(ItemEvent e) {
+//                        if(e.getStateChange()==1){
+//                            answer = option1.getText();
+//                            if(isCorrectAnswer()){
+//                                option1.setBackground(Color.green);//This code can be removed because correctAnswer is better.
+//                            }
+//                            else{
+//                                option1.setBackground(Color.red);
+//                            }
+//                             correctAnswer();
+//                        }
+//                    }
+//                
+//                });
+//        option2.addItemListener(new ItemListener(){
+//                    @Override
+//                    public void itemStateChanged(ItemEvent e) {
+//                        if(e.getStateChange()==1){
+//                            answer = option2.getText();
+//                        }
+//                        if(isCorrectAnswer()){
+//                                option2.setBackground(Color.green);//This code can be removed because correctAnswer is better.
+//                            }
+//                            else{
+//                                option2.setBackground(Color.red);
+//                            }
+//                        correctAnswer();
+//                    }
+//                
+//                });
+//        option3.addItemListener(new ItemListener(){
+//                    @Override
+//                    public void itemStateChanged(ItemEvent e) {
+//                        if(e.getStateChange()==1){
+//                            answer = option3.getText();
+//                        }
+//                        if(isCorrectAnswer()){
+//                                option3.setBackground(Color.green);//This code can be removed because correctAnswer is better.
+//                            }
+//                            else{
+//                                option3.setBackground(Color.red);
+//                            }
+//                         correctAnswer();
+//                    }
+//                
+//                });
+//        option4.addItemListener(new ItemListener(){
+//                    @Override
+//                    public void itemStateChanged(ItemEvent e) {
+//                        if(e.getStateChange()==1){
+//                            answer = option4.getText();
+//                        }
+//                        if(isCorrectAnswer()){
+//                                option4.setBackground(Color.green); //This code can be removed because correctAnswer is better.
+//                            }
+//                            else{
+//                                option4.setBackground(Color.red);
+//                            }
+//                         correctAnswer();
+//                    }
+//                
+//                });
+//    }
     public static boolean isCorrectAnswer(){
         Quiz quiz = new Quiz();
         if(answer.equals(quiz.getRightAnswer())) {   
@@ -577,6 +643,10 @@ public class Quizpage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField4;
     public static javax.swing.JButton next;
+    public static javax.swing.JPanel op1;
+    public static javax.swing.JPanel op2;
+    public static javax.swing.JPanel op3;
+    public static javax.swing.JPanel op4;
     public static javax.swing.JCheckBox option1;
     public static javax.swing.JCheckBox option2;
     public static javax.swing.JCheckBox option3;
