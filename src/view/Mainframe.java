@@ -1,9 +1,9 @@
 
-<<<<<<< HEAD
+
 package view;
-=======
+
 import javax.swing.JInternalFrame;
->>>>>>> lasthero
+
 import javax.swing.JOptionPane;
 import view.HomePage;
 import javax.swing.JPanel;
