@@ -50,14 +50,9 @@ public class HomePage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-<<<<<<< HEAD
         jPanel1.setPreferredSize(new java.awt.Dimension(74, 1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/computer.jpg"))); // NOI18N
-=======
-        jPanel1.setPreferredSize(new java.awt.Dimension(1035, 600));
-
->>>>>>> lasthero
         jLabel1.setText("jLabel1");
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -65,7 +60,6 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/math.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
 
@@ -88,22 +82,6 @@ public class HomePage extends javax.swing.JFrame {
         jLabel8.setText("jLabel8");
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/others.png"))); // NOI18N
-=======
-        jLabel2.setText("jLabel2");
-
-        jLabel3.setText("jLabel3");
-
-        jLabel4.setText("jLabel4");
-
-        jLabel6.setText("jLabel6");
-
-        jLabel5.setText("jLabel5");
-
-        jLabel7.setText("jLabel7");
-
-        jLabel8.setText("jLabel8");
-
->>>>>>> lasthero
         jLabel9.setText("jLabel9");
 
         ProgrammingLanguage.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -256,7 +234,6 @@ public class HomePage extends javax.swing.JFrame {
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-<<<<<<< HEAD
                             .addComponent(Grammar)
                             .addComponent(Gk))
                         .addGap(18, 18, 18)
@@ -270,18 +247,12 @@ public class HomePage extends javax.swing.JFrame {
                             .addComponent(Others)
                             .addComponent(AI))
                         .addGap(37, 37, 37))))
-=======
-                            .addComponent(jButton7)
-                            .addComponent(jButton8))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
->>>>>>> lasthero
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -291,13 +262,6 @@ public class HomePage extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE))
-=======
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
->>>>>>> lasthero
         );
 
         pack();
@@ -318,7 +282,7 @@ public class HomePage extends javax.swing.JFrame {
         
         // TODO add your handling code here:
     }//GEN-LAST:event_ProgrammingLanguageActionPerformed
-// quiz page made visible
+
     private void ScienceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ScienceActionPerformed
             Quizpage page = new Quizpage("Science");
           page.setVisible(true);
