@@ -97,11 +97,11 @@ int clientid;
             }
         });
 
-        btnsetting.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnsettingActionPerformed(evt);
-            }
-        });
+        // btnsetting.addActionListener(new java.awt.event.ActionListener() {
+        //     public void actionPerformed(java.awt.event.ActionEvent evt) {
+        //         btnsettingActionPerformed(evt);
+        //     }
+        // });
 
 
         exitexit.setText("Exit");
