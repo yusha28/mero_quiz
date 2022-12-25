@@ -18,13 +18,25 @@ import view.Quizpage;
  * @author acer
  */
 public class Mainframe extends javax.swing.JFrame {
-
+String FirstName;
+String LastName;
+String Email;
+String PhoneNumber;
+int clientid;
     /**
      * Creates new form Mainframe
      */
     int reply;
     public Mainframe() {
         initComponents();
+    }
+     public Mainframe(String FirstName,String LastName,String Email,String PhoneNumber,int clientid) {
+        initComponents();
+        this.FirstName=FirstName;
+        this.LastName=LastName;
+        this.Email=Email;
+        this.PhoneNumber=PhoneNumber;
+        this.clientid=clientid;
     }
 
     /**
@@ -213,7 +225,7 @@ mainpannel.add(internalFrame);
 
 
         HomePage main = new HomePage();    
-        main.setVisible(fale);
+        main.setVisible(false);
         this.dispose();
 >>>>>>> sonuDB
 //        desktopPaneControl.removeAll();
@@ -260,6 +272,7 @@ mainpannel.add(internalFrame);
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -287,8 +300,15 @@ mainpannel.add(internalFrame);
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Mainframe().setVisible(true);
+                
             }
         });
+    }
+    public void main(){
+        System.out.println(FirstName);
+        System.out.println(LastName);
+        System.out.println(PhoneNumber);
+        System.out.println(clientid);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
