@@ -57,7 +57,7 @@ public class Reg extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(102, 204, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(776, 643));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
@@ -168,7 +168,7 @@ public class Reg extends javax.swing.JFrame {
                                     .addComponent(confirmpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(144, 144, 144))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(135, Short.MAX_VALUE)
+                .addContainerGap(115, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(tick)
@@ -232,13 +232,17 @@ public class Reg extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 756, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -258,15 +262,26 @@ public class Reg extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_loginActionPerformed
 //database connection
+    // if else condition
     private void createaccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createaccountActionPerformed
+if(firstname.getText().equals("")&&lastname.getText().equals("")&&phonenumber.getText().equals("")&&email.getText().equals("")&&password.getText().equals("")&&confirmpassword.getText().equals("")){
+    
+JOptionPane.showMessageDialog(null, 
+                              "User Must Fill All The Details", 
+                              "WARNING", 
+                              JOptionPane.WARNING_MESSAGE);
+
+}
 if(confirmpassword.getText().equals(password.getText())){
-        if(tick.isSelected()){
+       if(tick.isSelected()){
     Student s1 = new Student(firstname.getText(),lastname.getText(),phonenumber.getText(),email.getText(),password.getText());
     StudentController sc = new StudentController();
     int insertedStudent = sc.insertStudent(s1);
     if(insertedStudent>0){
         System.out.println("Student inserted");
          JOptionPane.showMessageDialog(this,"Registered");
+          login yr=new login();
+        yr.setVisible(true); 
     }
     else{
         System.out.println("Not inserted");
@@ -279,8 +294,13 @@ if(confirmpassword.getText().equals(password.getText())){
                               "WARNING", 
                               JOptionPane.WARNING_MESSAGE);
 }
-   login yr=new login();
-        yr.setVisible(true);  
+
+//JOptionPane.showMessageDialog(null, 
+//                              "User Must Fill All The Details", 
+//                              "WARNING", 
+//                              JOptionPane.WARNING_MESSAGE);
+
+   
         // TODO add your handling code here:
     }//GEN-LAST:event_createaccountActionPerformed
 

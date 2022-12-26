@@ -27,12 +27,15 @@ public class DbConnection {
             String username = "root";
 
 
-            String password = "sonu@2002";
+           String password = "sonu@2002";
+
 
 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             connection  = DriverManager.getConnection(
+
+
 
 
 

@@ -15,7 +15,7 @@ public class StudentController{
         String contact =  student.getPhoneNumber();
         String email =  student.getEmail();
         String password= student.getPassword();
-        String insertQuery = String.format("INSERT INTO registration VALUES(%d, '%s', '%s', '%s','%s', '%s')", id, name, lastname, contact, email,password);
+        String insertQuery = String.format("INSERT INTO registration(FirstName,LastName,PhoneNumber,Email,Password) VALUES( '%s', '%s', '%s','%s', '%s')", name, lastname, contact, email,password);
         connection = new DbConnection();
         int result = connection.manipulate(insertQuery);
         return result;
