@@ -3,13 +3,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-
+import controller.StudentController;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileSystemView;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import java.io.File;
+import java.sql.*;
 /**
  *
  * @author acer
  */
 public class profile extends javax.swing.JFrame {
-
+   int clientid;
+   String FirstName;
+   String Number;
+   String Email;
+   JFileChooser file;
     /**
      * Creates new form profile
      */
@@ -61,6 +71,11 @@ public class profile extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButton2.setText("Edit Profile");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("Recent Score");
@@ -230,6 +245,42 @@ public class profile extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+//Code for getting directory of image using jfilechooser and converting into store then storing in database
+    file = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+        int r = file.showOpenDialog(null);
+        
+        
+     if (r == JFileChooser.APPROVE_OPTION) {
+    
+    File selectedFile = file.getSelectedFile();
+    String image=String.valueOf(selectedFile);
+    String[] arr=new String[image.length()];
+    String updatedImage="";    //update the image using the following code or for loop
+        for(int i=0;i<=image.length()-1;i++){
+            if(image.charAt(i)=='\\'){
+                arr[i]="/";
+            }else{
+              arr[i]=String.valueOf(image.charAt(i));
+            }
+            updatedImage+=arr[i];
+        }
+        //  System.out.println(updatedImage);
+        
+
+    int id=clientid;
+    System.out.println(id);
+    StudentController tc = new StudentController();
+    int updateImage=tc.insertImage(id, updatedImage);
+    if(updateImage>0){
+        JOptionPane.showMessageDialog(null,"Image Updated");
+    }
+    else{
+        JOptionPane.showMessageDialog(null,"Error, please try again.");
+
+    }        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+    }
     /**
      * @param args the command line arguments
      */
