@@ -68,7 +68,24 @@ public class StudentController{
       int result = connection.manipulate(selectQuery);
       
       }
-}
+      
+      public int insertImage(int id1,String image1){
+        int id=id1;
+        String image=image1;
+     
+        String updateQuery=String.format(
+        "update registration set tr_image='%s' where clientid=%d",image,id);
+        connection = new DbConnection();
+    int result = connection.manipulate(updateQuery);
+    return result;     
+     }
+      
+        
+        
+      }
+      
+
+
 
 //    public int updateStudent(Student student){
 //         int id = student.getClientId();
