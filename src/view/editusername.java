@@ -11,7 +11,7 @@ package view;
 public class editusername extends javax.swing.JFrame {
 
     /**
-     * Creates new form editusername
+     * Creates new form editusername,
      */
     public editusername() {
         initComponents();
@@ -33,6 +33,11 @@ public class editusername extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jTextField1.setText("jTextField1");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jButton1.setText("UPDATE");
@@ -82,6 +87,10 @@ public class editusername extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
