@@ -440,6 +440,14 @@ public class Quizpage extends javax.swing.JFrame {
                     }
                     
                 });
+        if(sec >= 0){
+                     performNext();// check here
+                     timer.stop();
+                     sec = 20;
+                }
+                
+                
+                timer.start();  
     }
 //    public static void onAnswerSelected(){
 //        option1.addItemListener(new ItemListener(){
