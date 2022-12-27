@@ -1,8 +1,10 @@
 
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import view.HomePage;
+import view.profile;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -14,7 +16,7 @@ import view.HomePage;
  * @author acer
  */
 public class Mainframe extends javax.swing.JFrame {
-
+JInternalFrame internalFrame = new JInternalFrame();
     /**
      * Creates new form Mainframe
      */
@@ -38,6 +40,8 @@ public class Mainframe extends javax.swing.JFrame {
         btnscoreboard = new javax.swing.JButton();
         exitexit = new javax.swing.JButton();
         dk = new javax.swing.JDesktopPane();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         desktopPaneControl.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -96,17 +100,23 @@ public class Mainframe extends javax.swing.JFrame {
         );
         dkLayout.setVerticalGroup(
             dkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 455, Short.MAX_VALUE)
+            .addGap(0, 448, Short.MAX_VALUE)
         );
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Update Password");
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Delete Account");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
+                        .addGap(22, 22, 22)
                         .addComponent(exitexit)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
@@ -114,26 +124,36 @@ public class Mainframe extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnscoreboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnprofile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnhome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)))
+                            .addComponent(btnhome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(dk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16))
+                .addGap(22, 22, 22))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(btnhome, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnprofile, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnscoreboard, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
-                .addComponent(exitexit, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(94, 94, 94))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(dk)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(dk))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(btnhome, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnprofile, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnscoreboard, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(exitexit, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(14, 14, 14))
         );
 
         pack();
@@ -148,27 +168,45 @@ public class Mainframe extends javax.swing.JFrame {
     }//GEN-LAST:event_btnscoreboardActionPerformed
 
     private void btnhomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnhomeActionPerformed
-        HomePage main = new HomePage(); 
-        main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        main.setVisible(true);
-        dk.setLayout(new BoxLayout(dk, BoxLayout.Y_AXIS));
-           dk.add(main);
-           main.setContentPane(dk);
-           main.setVisible(true);
+      
+//        HomePage main = new HomePage(); 
+//        main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        main.setVisible(true);
+//        dk.setLayout(new BoxLayout(dk, BoxLayout.Y_AXIS));
+//           dk.add(main);
+//           main.setContentPane(dk);
+//           main.setVisible(true);
 //        this.dispose();
 //        desktopPaneControl.removeAll();
 //        Frame1 f1=new Frame1(); //JInternalFrame object
 //        desktopPaneControl.add(f1).setVisible(true);
+HomePage t = new HomePage();
+//internalFrame = new JInternalFrame();
+internalFrame.setContentPane(t.getContentPane());
+internalFrame.pack();
+
+// set the internalFrame's location
+// ...
+
+internalFrame.setVisible(true);
+dk.add(internalFrame);
                 
                 
                 
     }//GEN-LAST:event_btnhomeActionPerformed
 
     private void btnprofileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnprofileActionPerformed
-        
-//        desktopPaneControl.removeAll();
-//        Frame2 f2=new Frame2();
-//        desktopPaneControl.add(f2).setVisible(true);
+        profile t = new profile();
+        internalFrame.removeAll();
+//JInternalFrame internalFrame = new JInternalFrame();
+internalFrame.setContentPane(t.getContentPane());
+internalFrame.pack();
+
+// set the internalFrame's location
+// ...
+
+internalFrame.setVisible(true);
+dk.add(internalFrame);
     }//GEN-LAST:event_btnprofileActionPerformed
 
     private void exitexitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitexitActionPerformed
@@ -231,5 +269,7 @@ public class Mainframe extends javax.swing.JFrame {
     private javax.swing.JDesktopPane desktopPaneControl;
     public static javax.swing.JDesktopPane dk;
     private javax.swing.JButton exitexit;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
