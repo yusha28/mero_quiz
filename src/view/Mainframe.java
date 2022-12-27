@@ -1,4 +1,4 @@
-
+package view;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
@@ -161,14 +161,22 @@ JInternalFrame internalFrame = new JInternalFrame();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnscoreboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnscoreboardActionPerformed
-//        desktopPaneControl.removeAll();
-//        Frame3 f3=new Frame3();
-//        desktopPaneControl.add(f3).setVisible(true);
-        
+dk.removeAll();
+        internalFrame.dispose();
+        Board t = new Board();
+
+internalFrame.setContentPane(t.getContentPane());
+internalFrame.pack();
+
+// set the internalFrame's location
+// ...
+
+internalFrame.setVisible(true);
+dk.add(internalFrame);
     }//GEN-LAST:event_btnscoreboardActionPerformed
 
     private void btnhomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnhomeActionPerformed
-      
+dk.removeAll();      
 //        HomePage main = new HomePage(); 
 //        main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //        main.setVisible(true);
@@ -181,7 +189,7 @@ JInternalFrame internalFrame = new JInternalFrame();
 //        Frame1 f1=new Frame1(); //JInternalFrame object
 //        desktopPaneControl.add(f1).setVisible(true);
 HomePage t = new HomePage();
-//internalFrame = new JInternalFrame();
+internalFrame.dispose();
 internalFrame.setContentPane(t.getContentPane());
 internalFrame.pack();
 
@@ -196,9 +204,12 @@ dk.add(internalFrame);
     }//GEN-LAST:event_btnhomeActionPerformed
 
     private void btnprofileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnprofileActionPerformed
+dk.removeAll();
+        internalFrame.dispose();
         profile t = new profile();
-        internalFrame.removeAll();
+//        internalFrame.removeAll();
 //JInternalFrame internalFrame = new JInternalFrame();
+
 internalFrame.setContentPane(t.getContentPane());
 internalFrame.pack();
 
