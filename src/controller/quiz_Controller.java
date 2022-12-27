@@ -20,7 +20,8 @@ public class quiz_Controller {
          List<Quiz> quizList = new ArrayList<>(); 
         DbConnection connection = new DbConnection();
 //        String query = String.format("select * from programmingLanguage");
-        String query = String.format("select * from "+category);
+//        String query = String.format("select * from "+category);
+      String query = String.format("select * from "+"AI");
         ResultSet result = connection.retrieve(query);
         
 

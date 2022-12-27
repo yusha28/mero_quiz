@@ -79,10 +79,29 @@ public class StudentController{
     int result = connection.manipulate(updateQuery);
     return result;     
      }
-      
+      public int updateStudentProfile(int id, String name2, String email2, String number2) {
+        String name =name2;
+        String email=email2;
+        String number=number2;
+        
+        String updateQuery = String.format(
+                "update registration_table set tr_name='%s', tr_number='%s',tr_email='%s' where tr_id= %d",name ,number,email,id);
+        connection = new DbConnection();
+        int result = connection.manipulate(updateQuery);
+        return result;
+    }
+
+      public int insertScore(int id,int score){
+        connection = new DbConnection();
+        String insertQuery = String.format("INSERT INTO score VALUES( %d,%d)",id,score);
+        int result = connection.manipulate(insertQuery);
+        return result;
+       
+    }
         
         
       }
+ 
       
 
 

@@ -11,12 +11,16 @@ import javax.swing.JOptionPane;
  * @author Lenovo
  */
 public class HomePage extends javax.swing.JFrame {
-
+static int id;
     /**
      * Creates new form HomePage
      */
     public HomePage() {
         initComponents();
+    }
+     public HomePage(int id) {
+        initComponents();
+        this.id = id;
     }
 
     /**
@@ -272,7 +276,7 @@ public class HomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void ProgrammingLanguageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProgrammingLanguageActionPerformed
-           Quizpage page = new Quizpage("ProgrammingLanguage");
+           Quizpage page = new Quizpage(id,"ProgrammingLanguage");
            page.timerM();
            page.randomIndex();
           page.setVisible(true);
@@ -283,49 +287,80 @@ public class HomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_ProgrammingLanguageActionPerformed
 
     private void ScienceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ScienceActionPerformed
-            Quizpage page = new Quizpage("Science");
+            Quizpage page = new Quizpage(id,"Science");
           page.setVisible(true);
+           page.timerM();
+           page.randomIndex();
+          page.setVisible(true);
+           
         // TODO add your handling code here:
     }//GEN-LAST:event_ScienceActionPerformed
 
     private void MathematicsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MathematicsActionPerformed
-           Quizpage page = new Quizpage("Mathematics");
+           Quizpage page = new Quizpage(id,"Mathematics");
           page.setVisible(true);
+           page.timerM();
+           page.randomIndex();
+          page.setVisible(true);
+           
         // TODO add your handling code here:
     }//GEN-LAST:event_MathematicsActionPerformed
 
     private void GrammarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GrammarActionPerformed
-            Quizpage page = new Quizpage("Grammar");
+            Quizpage page = new Quizpage(id,"Grammar");
           page.setVisible(true);
+           page.timerM();
+           page.randomIndex();
+          page.setVisible(true);
+           
         // TODO add your handling code here:
     }//GEN-LAST:event_GrammarActionPerformed
 
     private void GkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GkActionPerformed
-           Quizpage page = new Quizpage("Gk");
+           Quizpage page = new Quizpage(id,"Gk");
           page.setVisible(true);
+           page.timerM();
+           page.randomIndex();
+          page.setVisible(true);
+           
         // TODO add your handling code here:
     }//GEN-LAST:event_GkActionPerformed
 
     private void HistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HistoryActionPerformed
-         Quizpage page = new Quizpage("History");
-          page.setVisible(true);          
+         Quizpage page = new Quizpage(id,"History");
+          page.setVisible(true);  
+           page.timerM();
+           page.randomIndex();
+          page.setVisible(true);
+           
     }//GEN-LAST:event_HistoryActionPerformed
 
     private void GeographyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeographyActionPerformed
-            Quizpage page = new Quizpage("Geography");
+            Quizpage page = new Quizpage(id,"Geography");
           page.setVisible(true);
+           page.timerM();
+           page.randomIndex();
+          page.setVisible(true);
+           
         // TODO add your handling code here:
     }//GEN-LAST:event_GeographyActionPerformed
 
     private void AIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AIActionPerformed
-            Quizpage page = new Quizpage("AI");
+            Quizpage page = new Quizpage(id,"AI");
+           page.timerM();
+           page.randomIndex();
           page.setVisible(true);
+           
         // TODO add your handling code here:
     }//GEN-LAST:event_AIActionPerformed
 
     private void OthersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OthersActionPerformed
-           Quizpage page = new Quizpage("Others");
+           Quizpage page = new Quizpage(id,"Others");
           page.setVisible(true);
+           page.timerM();
+           page.randomIndex();
+          page.setVisible(true);
+           
         // TODO add your handling code here:
     }//GEN-LAST:event_OthersActionPerformed
 
