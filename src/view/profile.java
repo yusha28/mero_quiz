@@ -14,6 +14,7 @@ import java.sql.*;
  *
  * @author acer
  */
+// class created
 public class profile extends javax.swing.JFrame {
    int clientid;
    String FirstName;
