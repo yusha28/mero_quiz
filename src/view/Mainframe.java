@@ -1,13 +1,9 @@
 
-
-package view;
-
-import javax.swing.JInternalFrame;
-
+import javax.swing.BoxLayout;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import view.HomePage;
-import javax.swing.JPanel;
-import view.Quizpage;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -18,25 +14,13 @@ import view.Quizpage;
  * @author acer
  */
 public class Mainframe extends javax.swing.JFrame {
-String FirstName;
-String LastName;
-String Email;
-String PhoneNumber;
-int clientid;
+
     /**
      * Creates new form Mainframe
      */
     int reply;
     public Mainframe() {
         initComponents();
-    }
-     public Mainframe(String FirstName,String LastName,String Email,String PhoneNumber,int clientid) {
-        initComponents();
-        this.FirstName=FirstName;
-        this.LastName=LastName;
-        this.Email=Email;
-        this.PhoneNumber=PhoneNumber;
-        this.clientid=clientid;
     }
 
     /**
@@ -53,9 +37,7 @@ int clientid;
         btnprofile = new javax.swing.JButton();
         btnscoreboard = new javax.swing.JButton();
         exitexit = new javax.swing.JButton();
-        mainpannel = new javax.swing.JDesktopPane();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        dk = new javax.swing.JDesktopPane();
 
         desktopPaneControl.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -97,13 +79,6 @@ int clientid;
             }
         });
 
-        // btnsetting.addActionListener(new java.awt.event.ActionListener() {
-        //     public void actionPerformed(java.awt.event.ActionEvent evt) {
-        //         btnsettingActionPerformed(evt);
-        //     }
-        // });
-
-
         exitexit.setText("Exit");
         exitexit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,53 +86,38 @@ int clientid;
             }
         });
 
-        mainpannel.setBackground(new java.awt.Color(0, 0, 0));
+        dk.setBackground(new java.awt.Color(0, 0, 0));
 
-        javax.swing.GroupLayout mainpannelLayout = new javax.swing.GroupLayout(mainpannel);
-        mainpannel.setLayout(mainpannelLayout);
-        mainpannelLayout.setHorizontalGroup(
-            mainpannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 758, Short.MAX_VALUE)
+        javax.swing.GroupLayout dkLayout = new javax.swing.GroupLayout(dk);
+        dk.setLayout(dkLayout);
+        dkLayout.setHorizontalGroup(
+            dkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 742, Short.MAX_VALUE)
         );
-        mainpannelLayout.setVerticalGroup(
-            mainpannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        dkLayout.setVerticalGroup(
+            dkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 455, Short.MAX_VALUE)
         );
-
-        jLabel1.setText("Update Password");
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
-            }
-        });
-
-        jLabel2.setText("Delete Account");
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnscoreboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnprofile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnhome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(exitexit)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(exitexit))
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(mainpannel, javax.swing.GroupLayout.PREFERRED_SIZE, 758, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnscoreboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnprofile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnhome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)))
+                .addComponent(dk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,15 +128,11 @@ int clientid;
                 .addComponent(btnprofile, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnscoreboard, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 207, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
                 .addComponent(exitexit, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
+                .addGap(94, 94, 94))
             .addGroup(layout.createSequentialGroup()
-                .addComponent(mainpannel, javax.swing.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
+                .addComponent(dk)
                 .addContainerGap())
         );
 
@@ -188,43 +144,18 @@ int clientid;
 //        desktopPaneControl.removeAll();
 //        Frame3 f3=new Frame3();
 //        desktopPaneControl.add(f3).setVisible(true);
-Quizpage u = new Quizpage();
-JInternalFrame internalFrame = new JInternalFrame();
-internalFrame.setContentPane(u.getContentPane());
-internalFrame.pack();
-
-// set the internalFrame's location
-// ...
-
-internalFrame.setVisible(true);
-mainpannel.add(internalFrame);        
+        
     }//GEN-LAST:event_btnscoreboardActionPerformed
 
     private void btnhomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnhomeActionPerformed
-
-       HomePage t = new HomePage();
-JInternalFrame internalFrame = new JInternalFrame();
-internalFrame.setContentPane(t.getContentPane());
-internalFrame.pack();
-
-// set the internalFrame's location
-// ...
-
-internalFrame.setVisible(true);
-mainpannel.add(internalFrame);
-
-
-
-//        HomePage main = new HomePage();    
-//mainpannel.add (main);
-//        main.setVisible(true);
+        HomePage main = new HomePage(); 
+        main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        main.setVisible(true);
+        dk.setLayout(new BoxLayout(dk, BoxLayout.Y_AXIS));
+           dk.add(main);
+           main.setContentPane(dk);
+           main.setVisible(true);
 //        this.dispose();
-
-
-//         HomePage main = new HomePage();    
-//         main.setVisible(false);
-//         this.dispose();
-
 //        desktopPaneControl.removeAll();
 //        Frame1 f1=new Frame1(); //JInternalFrame object
 //        desktopPaneControl.add(f1).setVisible(true);
@@ -234,7 +165,7 @@ mainpannel.add(internalFrame);
     }//GEN-LAST:event_btnhomeActionPerformed
 
     private void btnprofileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnprofileActionPerformed
-
+        
 //        desktopPaneControl.removeAll();
 //        Frame2 f2=new Frame2();
 //        desktopPaneControl.add(f2).setVisible(true);
@@ -256,20 +187,11 @@ mainpannel.add(internalFrame);
 
             }
     }//GEN-LAST:event_exitexitActionPerformed
-
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel1MouseClicked
-
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel2MouseClicked
 // else if start
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -301,21 +223,13 @@ mainpannel.add(internalFrame);
             }
         });
     }
-    public void main(){
-        System.out.println(FirstName);
-        System.out.println(LastName);
-        System.out.println(PhoneNumber);
-        System.out.println(clientid);
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnhome;
     private javax.swing.JButton btnprofile;
     private javax.swing.JButton btnscoreboard;
     private javax.swing.JDesktopPane desktopPaneControl;
+    public static javax.swing.JDesktopPane dk;
     private javax.swing.JButton exitexit;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JDesktopPane mainpannel;
     // End of variables declaration//GEN-END:variables
 }
