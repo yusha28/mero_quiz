@@ -196,6 +196,8 @@ public class Result extends javax.swing.JFrame {
     subject.setText(subject1);
     String mark=String.valueOf(correctAnswer*10);
     score.setText(String.valueOf(mark));
+    String marks1=String.format("%d/10",correctAnswer);
+    marks.setText(marks1);
     
     }
 

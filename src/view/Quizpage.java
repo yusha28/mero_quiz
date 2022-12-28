@@ -277,6 +277,7 @@ public class Quizpage extends javax.swing.JFrame {
             skip.setVisible(false);
             this.dispose();
             Result resultPage = new Result(correctAnswer, category, id);
+            resultPage.setText1();
             resultPage.setVisible(true);
             System.out.println("CorrectAnswer "+correctAnswer);
         }
@@ -609,7 +610,7 @@ public class Quizpage extends javax.swing.JFrame {
             option3.setSelected(false);
             option4.setSelected(false);
             System.out.println("Category: "+category);
-            List<Quiz> quizList = controller.m("AI");
+            List<Quiz> quizList = controller.m(category);
 //            Random ran = new Random();
 //            int index = ran.nextInt(0,4);// correct this code...........................................................................
 //            selectedNumberFromRandom = index;

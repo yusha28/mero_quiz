@@ -23,7 +23,7 @@ public class quiz_Controller {
 //        String query = String.format("select * from "+category);
       String query = String.format("select * from "+"AI");
         ResultSet result = connection.retrieve(query);
-        
+        System.out.println(query);
 
         while(result.next()){
         Quiz quiz = new Quiz();
