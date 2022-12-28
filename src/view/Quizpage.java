@@ -450,7 +450,11 @@ public class Quizpage extends javax.swing.JFrame {
                 }
                 
                 
+<<<<<<< HEAD
+                timer.start();  
+=======
                 timer.start();
+>>>>>>> starbucks
     }
 //    public static void onAnswerSelected(){
 //        option1.addItemListener(new ItemListener(){
