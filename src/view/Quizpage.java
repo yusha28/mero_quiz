@@ -617,6 +617,12 @@ public class Quizpage extends javax.swing.JFrame {
 //            int index = ran.nextInt(0,4);// correct this code...........................................................................
 //            selectedNumberFromRandom = index;
              selectedNumberFromRandom = questions;
+             if(randomNum == 1){
+                questions = 1;
+            }
+            else{
+                questions = 5;
+            }
 //            q = quizList.get(index);
             q = quizList.get(questions);
             Questions.setText(q.getQuestion());
@@ -625,12 +631,7 @@ public class Quizpage extends javax.swing.JFrame {
             option3.setText(q.getOption3());
             option4.setText(q.getOption4());
             count.setText(String.valueOf(questionCount));
-           if(randomNum == 1){
-                questions--;
-            }
-            else{
-                questions++;
-            }
+          questions++;
         }
         catch(Exception e){
             
