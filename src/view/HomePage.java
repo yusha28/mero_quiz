@@ -11,16 +11,12 @@ import javax.swing.JOptionPane;
  * @author Lenovo
  */
 public class HomePage extends javax.swing.JFrame {
-static int id;
+
     /**
      * Creates new form HomePage
      */
     public HomePage() {
         initComponents();
-    }
-     public HomePage(int id) {
-        initComponents();
-        this.id = id;
     }
 
     /**
@@ -186,16 +182,15 @@ static int id;
                                 .addComponent(Mathematics)))
                         .addGap(30, 30, 30))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)))
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -258,13 +253,15 @@ static int id;
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 748, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 17, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -276,7 +273,7 @@ static int id;
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void ProgrammingLanguageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProgrammingLanguageActionPerformed
-           Quizpage page = new Quizpage(id,"ProgrammingLanguage");
+           Quizpage page = new Quizpage("ProgrammingLanguage");
            page.timerM();
            page.randomIndex();
           page.setVisible(true);
@@ -287,80 +284,65 @@ static int id;
     }//GEN-LAST:event_ProgrammingLanguageActionPerformed
 
     private void ScienceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ScienceActionPerformed
-            Quizpage page = new Quizpage(id,"Science");
-          page.setVisible(true);
-           page.timerM();
+            Quizpage page = new Quizpage("Science");
+          page.timerM();
            page.randomIndex();
           page.setVisible(true);
-           
         // TODO add your handling code here:
     }//GEN-LAST:event_ScienceActionPerformed
 
     private void MathematicsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MathematicsActionPerformed
-           Quizpage page = new Quizpage(id,"Mathematics");
-          page.setVisible(true);
+           Quizpage page = new Quizpage("Mathematics");
            page.timerM();
            page.randomIndex();
           page.setVisible(true);
-           
         // TODO add your handling code here:
     }//GEN-LAST:event_MathematicsActionPerformed
 
     private void GrammarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GrammarActionPerformed
-            Quizpage page = new Quizpage(id,"Grammar");
-          page.setVisible(true);
-           page.timerM();
+            Quizpage page = new Quizpage("Grammar");
+            page.timerM();
            page.randomIndex();
           page.setVisible(true);
-           
         // TODO add your handling code here:
     }//GEN-LAST:event_GrammarActionPerformed
 
     private void GkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GkActionPerformed
-           Quizpage page = new Quizpage(id,"Gk");
-          page.setVisible(true);
+           Quizpage page = new Quizpage("Gk");
            page.timerM();
            page.randomIndex();
           page.setVisible(true);
-           
         // TODO add your handling code here:
     }//GEN-LAST:event_GkActionPerformed
 
     private void HistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HistoryActionPerformed
-         Quizpage page = new Quizpage(id,"History");
-          page.setVisible(true);  
-           page.timerM();
+         Quizpage page = new Quizpage("History");
+         page.timerM();
            page.randomIndex();
-          page.setVisible(true);
-           
+          page.setVisible(true);          
     }//GEN-LAST:event_HistoryActionPerformed
 
     private void GeographyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeographyActionPerformed
-            Quizpage page = new Quizpage(id,"Geography");
-          page.setVisible(true);
-           page.timerM();
+            Quizpage page = new Quizpage("Geography");
+            page.timerM();
            page.randomIndex();
           page.setVisible(true);
-           
         // TODO add your handling code here:
     }//GEN-LAST:event_GeographyActionPerformed
 
     private void AIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AIActionPerformed
-            Quizpage page = new Quizpage(id,"AI");
-           page.timerM();
+            Quizpage page = new Quizpage("AI");
+            page.timerM();
            page.randomIndex();
           page.setVisible(true);
-           
         // TODO add your handling code here:
     }//GEN-LAST:event_AIActionPerformed
 
     private void OthersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OthersActionPerformed
-           Quizpage page = new Quizpage(id,"Others");
-          page.setVisible(true);
+           Quizpage page = new Quizpage("Others");
            page.timerM();
            page.randomIndex();
           page.setVisible(true);
-           
         // TODO add your handling code here:
     }//GEN-LAST:event_OthersActionPerformed
 
