@@ -259,6 +259,7 @@ public class Reg extends javax.swing.JFrame {
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         login yr=new login();
         yr.setVisible(true);
+        this.dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_loginActionPerformed
 //database connection
