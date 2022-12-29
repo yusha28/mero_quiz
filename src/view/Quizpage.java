@@ -28,13 +28,15 @@ public class Quizpage extends javax.swing.JFrame {
     public static int selectedNumberFromRandom;
     public boolean isOptionSelected;
     public static int randomNum;
+    static int id;
     
     public Quizpage() {
         initComponents();
     }
     
-    public Quizpage(String category){
+    public Quizpage(int id, String category){
         this.category = category;
+        this.id = id;
         initComponents();
     }
 
@@ -275,8 +277,9 @@ public class Quizpage extends javax.swing.JFrame {
             timer1.setVisible(false);
             skip.setVisible(false);
             this.dispose();
-//            Result resultPage = new Result(correctAnswer);
-//            resultPage.setVisible(true);
+            Result resultPage = new Result(correctAnswer, category, id);
+            resultPage.setText1();
+            resultPage.setVisible(true);
             System.out.println("CorrectAnswer "+correctAnswer);
         }
         
@@ -449,6 +452,7 @@ public class Quizpage extends javax.swing.JFrame {
                 
                 
                 timer.start();  
+                timer.start();
     }
 //    public static void onAnswerSelected(){
 //        option1.addItemListener(new ItemListener(){
@@ -529,7 +533,7 @@ public class Quizpage extends javax.swing.JFrame {
         Quiz q;
         Quiz quiz = new Quiz();
         quiz_Controller controller = new quiz_Controller();
-          List<Quiz> quizList = controller.m("programmingLanguage");
+          List<Quiz> quizList = controller.m(category);
 //            Random ran = new Random();
 //            int index = ran.nextInt(0,2);// correct this code...........................................................................
             q = quizList.get(selectedNumberFromRandom);
@@ -608,7 +612,7 @@ public class Quizpage extends javax.swing.JFrame {
             option3.setSelected(false);
             option4.setSelected(false);
             System.out.println("Category: "+category);
-            List<Quiz> quizList = controller.m("programmingLanguage");
+            List<Quiz> quizList = controller.m(category);
 //            Random ran = new Random();
 //            int index = ran.nextInt(0,4);// correct this code...........................................................................
 //            selectedNumberFromRandom = index;

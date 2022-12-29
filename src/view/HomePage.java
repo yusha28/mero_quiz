@@ -11,12 +11,16 @@ import javax.swing.JOptionPane;
  * @author Lenovo
  */
 public class HomePage extends javax.swing.JFrame {
-
+static int id;
     /**
      * Creates new form HomePage
      */
     public HomePage() {
         initComponents();
+    }
+     public HomePage(int id) {
+        initComponents();
+        this.id = id;
     }
 
     /**
@@ -50,14 +54,9 @@ public class HomePage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-<<<<<<< HEAD
         jPanel1.setPreferredSize(new java.awt.Dimension(74, 1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/computer.jpg"))); // NOI18N
-=======
-        jPanel1.setPreferredSize(new java.awt.Dimension(1035, 600));
-
->>>>>>> lasthero
         jLabel1.setText("jLabel1");
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -65,7 +64,6 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/math.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
 
@@ -88,22 +86,6 @@ public class HomePage extends javax.swing.JFrame {
         jLabel8.setText("jLabel8");
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/others.png"))); // NOI18N
-=======
-        jLabel2.setText("jLabel2");
-
-        jLabel3.setText("jLabel3");
-
-        jLabel4.setText("jLabel4");
-
-        jLabel6.setText("jLabel6");
-
-        jLabel5.setText("jLabel5");
-
-        jLabel7.setText("jLabel7");
-
-        jLabel8.setText("jLabel8");
-
->>>>>>> lasthero
         jLabel9.setText("jLabel9");
 
         ProgrammingLanguage.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -204,15 +186,16 @@ public class HomePage extends javax.swing.JFrame {
                                 .addComponent(Mathematics)))
                         .addGap(30, 30, 30))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -256,7 +239,6 @@ public class HomePage extends javax.swing.JFrame {
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-<<<<<<< HEAD
                             .addComponent(Grammar)
                             .addComponent(Gk))
                         .addGap(18, 18, 18)
@@ -270,34 +252,19 @@ public class HomePage extends javax.swing.JFrame {
                             .addComponent(Others)
                             .addComponent(AI))
                         .addGap(37, 37, 37))))
-=======
-                            .addComponent(jButton7)
-                            .addComponent(jButton8))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
->>>>>>> lasthero
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 748, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE))
-=======
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
->>>>>>> lasthero
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 17, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -309,7 +276,7 @@ public class HomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void ProgrammingLanguageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProgrammingLanguageActionPerformed
-           Quizpage page = new Quizpage("ProgrammingLanguage");
+           Quizpage page = new Quizpage(id,"ProgrammingLanguage");
            page.timerM();
            page.randomIndex();
           page.setVisible(true);
@@ -320,49 +287,80 @@ public class HomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_ProgrammingLanguageActionPerformed
 
     private void ScienceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ScienceActionPerformed
-            Quizpage page = new Quizpage("Science");
+            Quizpage page = new Quizpage(id,"Science");
           page.setVisible(true);
+           page.timerM();
+           page.randomIndex();
+          page.setVisible(true);
+           
         // TODO add your handling code here:
     }//GEN-LAST:event_ScienceActionPerformed
 
     private void MathematicsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MathematicsActionPerformed
-           Quizpage page = new Quizpage("Mathematics");
+           Quizpage page = new Quizpage(id,"Mathematics");
           page.setVisible(true);
+           page.timerM();
+           page.randomIndex();
+          page.setVisible(true);
+           
         // TODO add your handling code here:
     }//GEN-LAST:event_MathematicsActionPerformed
 
     private void GrammarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GrammarActionPerformed
-            Quizpage page = new Quizpage("Grammar");
+            Quizpage page = new Quizpage(id,"Grammar");
           page.setVisible(true);
+           page.timerM();
+           page.randomIndex();
+          page.setVisible(true);
+           
         // TODO add your handling code here:
     }//GEN-LAST:event_GrammarActionPerformed
 
     private void GkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GkActionPerformed
-           Quizpage page = new Quizpage("Gk");
+           Quizpage page = new Quizpage(id,"Gk");
           page.setVisible(true);
+           page.timerM();
+           page.randomIndex();
+          page.setVisible(true);
+           
         // TODO add your handling code here:
     }//GEN-LAST:event_GkActionPerformed
 
     private void HistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HistoryActionPerformed
-         Quizpage page = new Quizpage("History");
-          page.setVisible(true);          
+         Quizpage page = new Quizpage(id,"History");
+          page.setVisible(true);  
+           page.timerM();
+           page.randomIndex();
+          page.setVisible(true);
+           
     }//GEN-LAST:event_HistoryActionPerformed
 
     private void GeographyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeographyActionPerformed
-            Quizpage page = new Quizpage("Geography");
+            Quizpage page = new Quizpage(id,"Geography");
           page.setVisible(true);
+           page.timerM();
+           page.randomIndex();
+          page.setVisible(true);
+           
         // TODO add your handling code here:
     }//GEN-LAST:event_GeographyActionPerformed
 
     private void AIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AIActionPerformed
-            Quizpage page = new Quizpage("AI");
+            Quizpage page = new Quizpage(id,"AI");
+           page.timerM();
+           page.randomIndex();
           page.setVisible(true);
+           
         // TODO add your handling code here:
     }//GEN-LAST:event_AIActionPerformed
 
     private void OthersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OthersActionPerformed
-           Quizpage page = new Quizpage("Others");
+           Quizpage page = new Quizpage(id,"Others");
           page.setVisible(true);
+           page.timerM();
+           page.randomIndex();
+          page.setVisible(true);
+           
         // TODO add your handling code here:
     }//GEN-LAST:event_OthersActionPerformed
 

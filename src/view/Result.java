@@ -9,12 +9,21 @@ package view;
  * @author Lenovo
  */
 public class Result extends javax.swing.JFrame {
-
+    static int correctAnswer;
+    static String subject1;
+    static int id;
     /**
      * Creates new form Result
      */
     public Result() {
         initComponents();
+    }
+    public Result(int CorrectAnswer, String subject,int id) {
+    initComponents();
+  
+    this.correctAnswer = CorrectAnswer;
+    this.subject1 = subject;
+    this.id= id;
     }
 
     /**
@@ -182,6 +191,14 @@ public class Result extends javax.swing.JFrame {
             }
         };
     });
+    }
+    public void setText1(){
+    subject.setText(subject1);
+    String mark=String.valueOf(correctAnswer*10);
+    score.setText(String.valueOf(mark));
+    String marks1=String.format("%d/10",correctAnswer);
+    marks.setText(marks1);
+    
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

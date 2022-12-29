@@ -68,7 +68,44 @@ public class StudentController{
       int result = connection.manipulate(selectQuery);
       
       }
-}
+      
+      public int insertImage(int id1,String image1){
+        int id=id1;
+        String image=image1;
+     
+        String updateQuery=String.format(
+        "update registration set tr_image='%s' where clientid=%d",image,id);
+        connection = new DbConnection();
+    int result = connection.manipulate(updateQuery);
+    return result;     
+     }
+      public int updateStudentProfile(int id, String name2,String lastname, String email2, String number2) {
+        String name =name2;
+        String Name=lastname;
+        String email=email2;
+        String number=number2;
+        
+        String updateQuery = String.format(
+                "update registration set FirstName='%s',LastName='%s', PhoneNumber='%s',Email='%s' where clientid= %d",name,lastname ,number,email,id);
+        connection = new DbConnection();
+        int result = connection.manipulate(updateQuery);
+        return result;
+    }
+
+      public int insertScore(int id,int score){
+        connection = new DbConnection();
+        String insertQuery = String.format("INSERT INTO score VALUES( %d,%d)",id,score);
+        int result = connection.manipulate(insertQuery);
+        return result;
+       
+    }
+        
+        
+      }
+ 
+      
+
+
 
 //    public int updateStudent(Student student){
 //         int id = student.getClientId();
