@@ -293,7 +293,7 @@ if(confirmpassword.getText().equals(password.getText())){
                               "PASSWORD DOES NOT MATCH", 
                               "WARNING", 
                               JOptionPane.WARNING_MESSAGE);
-}
+} 
 
 //JOptionPane.showMessageDialog(null, 
 //                              "User Must Fill All The Details", 
@@ -312,7 +312,7 @@ JOptionPane.showMessageDialog(null,
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
-
+//error in database
     /**
      * @param args the command line arguments
      */
