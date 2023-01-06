@@ -197,7 +197,7 @@ dk.removeAll();
 //        desktopPaneControl.removeAll();
 //        Frame1 f1=new Frame1(); //JInternalFrame object
 //        desktopPaneControl.add(f1).setVisible(true);
-HomePage t = new HomePage();
+HomePage t = new HomePage(id);
 internalFrame.dispose();
 internalFrame.setContentPane(t.getContentPane());
 internalFrame.pack();
@@ -215,7 +215,7 @@ dk.add(internalFrame);
     private void btnprofileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnprofileActionPerformed
 dk.removeAll();
         internalFrame.dispose();
-        profile t = new profile();
+        profile t = new profile(id, firstName, lastName, contact, email);
 //        internalFrame.removeAll();
 //JInternalFrame internalFrame = new JInternalFrame();
 

@@ -20,9 +20,10 @@ public class quiz_Controller {
          List<Quiz> quizList = new ArrayList<>(); 
         DbConnection connection = new DbConnection();
 //        String query = String.format("select * from programmingLanguage");
-        String query = String.format("select * from "+category);
+//        String query = String.format("select * from "+category);
+      String query = String.format("select * from "+category);
         ResultSet result = connection.retrieve(query);
-        
+        System.out.println(query);
 
         while(result.next()){
         Quiz quiz = new Quiz();

@@ -27,7 +27,7 @@ public class DbConnection {
             String username = "root";
 
 
-           String password = "sonu@2002";
+           String password = "root";
 
 
 
@@ -40,7 +40,7 @@ public class DbConnection {
 
 
 
-                    "jdbc:mysql://localhost:3306/sonu1","root","sonu@2002");
+                    "jdbc:mysql://localhost:3306/quiz","root","root");
 
 
 
