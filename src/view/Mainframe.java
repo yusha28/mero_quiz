@@ -214,10 +214,12 @@ dk.add(internalFrame);
 
     private void btnprofileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnprofileActionPerformed
 dk.removeAll();
+    String name = firstName+lastName;
         internalFrame.dispose();
-        profile t = new profile(id, firstName, lastName, contact, email);
+        profile t = new profile(id, name, contact);
 //        internalFrame.removeAll();
 //JInternalFrame internalFrame = new JInternalFrame();
+t.setText();
 
 internalFrame.setContentPane(t.getContentPane());
 internalFrame.pack();
