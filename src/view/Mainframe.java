@@ -5,6 +5,7 @@ import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import view.HomePage;
 import view.profile;
+import view.Result;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -21,7 +22,7 @@ JInternalFrame internalFrame = new JInternalFrame();
      * Creates new form Mainframe
      */
     int reply;
-    public Mainframe() {
+    public Mainframe(String string, String string1, String string2, String string3, int aInt) {
         initComponents();
     }
 
@@ -225,7 +226,7 @@ dk.add(internalFrame);
             int response= JOptionPane.showConfirmDialog(this, "Do you want to exit?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
             if(response==JOptionPane.YES_OPTION){
-            Mainframe main = new Mainframe();    
+            Mainframe main = new Mainframe(result.getString("FirstName"), result.getString("LastName"), result.getString("Email"), result.getString("PhoneNumber"), result.getInt("clientid"));    
             this.dispose();  
 
  
@@ -240,7 +241,7 @@ dk.add(internalFrame);
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -267,7 +268,7 @@ dk.add(internalFrame);
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Mainframe().setVisible(true);
+                new Mainframe(result.getString("FirstName"), result.getString("LastName"), result.getString("Email"), result.getString("PhoneNumber"), result.getInt("clientid")).setVisible(true);
                 
             }
         });
@@ -283,4 +284,8 @@ dk.add(internalFrame);
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
+
+    void main() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
