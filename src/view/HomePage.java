@@ -19,6 +19,10 @@ static int id;
         initComponents();
         this.id = id;
     }
+    public HomePage(int id){
+        initComponents();
+        this.id=id;
+    }
 
 
 
