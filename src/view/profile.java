@@ -24,7 +24,7 @@ public class profile extends javax.swing.JFrame {
     /**
      * Creates new form profile
      */
-    public profile() {
+    public profile(int id, String firstName, String lastName, String contact, String email) {
         initComponents();
     }
      public profile(int id, String name, String contact) {
@@ -324,7 +324,7 @@ public class profile extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new profile().setVisible(true);
+                new profile(id, firstName, lastName, contact, email).setVisible(true);
             }
         });
     }
